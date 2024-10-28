@@ -396,10 +396,6 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.frame1 {
-  opacity: 1;
-}
-
 .ring {
   opacity: 0;
   -webkit-transform-origin: 225px 330px;
