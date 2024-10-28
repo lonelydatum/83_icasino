@@ -1,0 +1,23 @@
+@import '../../../_common/styles/b300x250.scss';
+@import '../../../_common/styles/ypy.scss';
+
+
+#banner{
+	background-color: #4cfff4;
+}
+
+.hero-all{
+	@include pos-scale(-40, 0, .5);	
+}
+
+
+
+.devices{
+	// transform-origin: 50% 50%;
+	
+	@include pos-scale(-150, -125, .5);
+	
+	// @include pos-scale(-150, -153, .38);
+	
+	
+}
