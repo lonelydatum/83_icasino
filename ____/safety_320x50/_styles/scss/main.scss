@@ -1,0 +1,64 @@
+@import '../../../_common/styles/b320x50.scss';
+@import '../../../_common/styles/ypy.scss';
+
+#banner{
+	background-color: white;
+	background-color: #a56bff;
+}
+
+
+
+
+
+
+.bg{
+	width: 320px;
+	height: 50px;
+	@include pos(0, 0);
+	position: absolute;
+	background-color: #ff52ef;
+}
+
+
+
+
+.ypy-text{
+	transform-origin: 50% 50%;
+
+	filter: drop-shadow(5px 5px 8px rgba(0,0,0,.8));
+}
+.coin{
+	transform-origin: 50% 50%;
+}
+
+
+.ypy-text-1{
+	@include pos-scale-rotate(52, 3, .5, -22);
+}
+
+.ypy-text-2{
+	@include pos-scale-rotate(106, 4, .5, 16);
+}
+
+.ypy-text-3{
+	@include pos-scale-rotate(210, 7, .5, -33);
+}
+
+.coin-1{
+	@include pos-scale(185, -91, .5);
+}
+.coin-2{
+	@include pos-scale(3, -22, .5);
+}
+.coin-3{
+	@include pos-scale(159, -28, .5);
+}
+.coin-4{
+	@include pos-scale(-127, -59, .5);
+}
+.coin-5{
+	@include pos-scale(187, -2, .5);
+}
+.coin-6{
+	@include pos-scale(130, -10, .5);
+}

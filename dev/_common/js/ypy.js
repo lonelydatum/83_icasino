@@ -1,11 +1,12 @@
 import {init, olg, olg_ypy, bannerSize} from './common.js'
 document.getElementById("legalContent").innerHTML = `
-© 2024 IGT.<br/>
+© 2023 IGT.<br/>
+© 2023 Evolution. All Rights Reserved.<br/>
 <br/>
-Must be 19 years of age or older and 
-a resident of Ontario, located in the province to play online casino games. Games and screens may not appear 
-as shown. Odds vary by game. The only accurate reflection of the jackpot value can be found in-game at OLG.ca.
-<br/>Terms and conditions apply.`
+Must be 19 years of age or older and a resident of Ontario, located in the province to play
+online casino games. Games and screens may not appear as shown. Odds vary by game.
+<br/>
+Terms and conditions apply.`
 
 const READ = {
 	t1: 1.8,
@@ -63,19 +64,11 @@ function start(heroScale){
 
 
 	tl.add("scroller", "-=.5")
-
-	// tl.add("gar", "+=.3")
 	tl.from(".url", {opacity:0, duration:.3}, "scroller")
 	
-	tl.add(olg_ypy(), "scroller")
+	tl.add(olg_ypy(), "+=.3")
 
-	tl.add("shrink", "+=.3")
-	tl.to(".devices", {y:-153, scale:.38, duration:.5}, "shrink")
-	tl.to([".url", ".ypy-all"], {opacity:0, duration:.5}, "shrink")
 
-	tl.from(".mj", {opacity:0, duration:.3})
-
-	// tl.play("end")
 
 	return tl
 }

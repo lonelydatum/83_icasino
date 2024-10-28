@@ -28,7 +28,7 @@ function init(){
 
 function olg_ypy(){
 	const tl = new TimelineMax()
-	
+
 	tl.add("done")
 	tl.add(olg(), "done")
 	tl.add(ypyScroll(), "done")

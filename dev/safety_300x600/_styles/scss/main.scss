@@ -1,0 +1,27 @@
+@import '../../../_common/styles/b300x600.scss';
+@import '../../../_common/styles/ypy.scss';
+
+#banner{
+	background-color: white;
+}
+
+.hero{
+	// transform-origin: 50% 50%;
+	
+	@include pos-scale(-100, 12, .82);
+	
+}
+
+.frame2{
+	background-color: #bfff00;	
+}
+
+
+
+.footer-bar{
+	width: 300px;
+	height: 243px;
+	background-color: #bfff00;
+	@include pos(0, 357);
+}
+
