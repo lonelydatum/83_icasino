@@ -145,7 +145,7 @@ function startBasic(_ref) {
 	tl.from([".brand-logo"], { opacity: 0, duration: .4 }, "shrink+=.2");
 
 	tl.to(".t1", { opacity: 0, duration: .3 }, "+=" + READ.t1);
-	tl.from([".t2", ".brand-logo"], { opacity: 0, duration: .3 });
+	tl.from([".t2"], { opacity: 0, duration: .3 });
 
 	tl.add("end", "+=" + READ.t2);
 	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: .5 }, "end");
