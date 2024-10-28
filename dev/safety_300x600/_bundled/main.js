@@ -132,7 +132,11 @@ function startBasic(_ref) {
 	tl.add("shrink", "+=.3");
 	tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
 	tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
-	// tl.to(".hero", {x:0, y:0, scale:.50, duration:.3}, "shrink")
+
+	if (_commonJs.bannerSize.w < _commonJs.bannerSize.h) {
+		tl.to(".hero", { x: 0, y: 0, scale: .50, duration: .3 }, "shrink");
+	}
+
 	tl.from(".footer-bar", { y: _commonJs.bannerSize.h, duration: .3 }, "shrink");
 	tl.from(".t1", { y: _commonJs.bannerSize.h, duration: .4 }, "shrink");
 	tl.to(".ypy1-1", _extends({}, ypy[0], { duration: .3 }), "shrink");
