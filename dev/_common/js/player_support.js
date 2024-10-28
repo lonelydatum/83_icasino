@@ -1,7 +1,7 @@
 import {init, olg, olg_ypy, bannerSize} from './common.js'
 
 document.getElementById("legalContent").innerHTML = `
-©2024 IGT.<br/><br/>
+©2024 IGT.<br/>
 Must be 19 years of age or older and a resident 
 of Ontario, located in the province to play online
 casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
