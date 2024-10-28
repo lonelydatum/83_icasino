@@ -5,6 +5,9 @@
 	background-color: white;
 }
 
+#banner, .frame{
+	// overflow: visible;
+}
 .hero{
 	// transform-origin: 50% 50%;
 	
@@ -21,7 +24,20 @@
 .footer-bar{
 	width: 160px;
 	height: 243px;
-	background-color: #bfff00;
+	background-color: #4bfff4;
 	@include pos(0, 357);
 }
 
+.ring{
+	transform-origin: 294px 480px;
+	@include pos-scale-rotate(-240, 17, 1.03, 0);
+	
+	
+}
+
+.ypy{
+	transform-origin: 80px 830px;
+	@include pos-scale-rotate(-40, -417, .5, 0);
+
+	
+}
