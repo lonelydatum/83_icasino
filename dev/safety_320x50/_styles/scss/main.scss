@@ -2,7 +2,11 @@
 @import '../../../_common/styles/ypy.scss';
 
 #banner{
-	background-color: #bfff00;
+	background-color: #4bfff4;
+}
+
+#banner, .frame{
+	// overflow: visible;
 }
 
 .hero{
@@ -11,7 +15,7 @@
 }
 
 .frame2{
-	background-color: #bfff00;	
+	background-color: #4bfff4;	
 }
 
 
@@ -21,5 +25,18 @@
 	// height: 90px;
 	// background-color: #bfff00;
 	// @include pos(0, 160);
+}
+
+
+.ring{
+	// opacity: 0;
+	transform-origin: 50% 100%;
+	@include pos-scale-rotate(-93, -190, .7, 0);
+	
+}
+
+.ypy{
+	transform-origin: 360px 200%;
+	@include pos-scale-rotate(-181, -100, .5, 0);	
 }
 

@@ -369,11 +369,50 @@ canvas, .text, .frame, .outline, img {
 }
 
 #banner {
-  background-color: white;
+  background-color: #4bfff4;
 }
 
-.frame2 {
-  background-color: #bfff00;
+.frame {
+  background-color: #4bfff4;
+}
+
+.hero {
+  -webkit-transform: translate(444px, 0px) scale(0.5, 0.5);
+  -ms-transform: translate(444px, 0px) scale(0.5, 0.5);
+  transform: translate(444px, 0px) scale(0.5, 0.5);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ring {
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transform: translate(0px, -197px) scale(1) rotate(0deg);
+  -ms-transform: translate(0px, -197px) scale(1) rotate(0deg);
+  transform: translate(0px, -197px) scale(1) rotate(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ypy {
+  -webkit-transform-origin: 1100px 500px;
+  -ms-transform-origin: 1100px 500px;
+  transform-origin: 1100px 500px;
+  -webkit-transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
+  -ms-transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
+  transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=main.css.map */

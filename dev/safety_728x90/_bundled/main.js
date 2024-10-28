@@ -110,7 +110,10 @@ var READ = {
 	t2: 2
 };
 
-function startBasic() {
+function startBasic(_ref) {
+	var ypy = _ref.ypy;
+
+	console.log(ypy);
 	var tl = (0, _commonJs.init)();
 
 	var rotate = 150;
@@ -122,19 +125,19 @@ function startBasic() {
 	tl.from(".ring1_3", _extends({}, ring, { rotate: -rotate }), "arcs-in+=.2");
 	tl.from(".ring1_4", _extends({}, ring, { rotate: rotate }), "arcs-in+=.3");
 
-	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=0.2");
-	tl.from(".ypy1-2", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=.5");
-	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=.7");
+	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=0.2");
+	tl.from(".ypy1-2", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.4");
+	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.6");
 
 	tl.add("shrink", "+=.3");
 	tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
 	tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
-	tl.to(".hero", { x: 0, y: 0, scale: .50, duration: .3 }, "shrink");
+	// tl.to(".hero", {x:0, y:0, scale:.50, duration:.3}, "shrink")
 	tl.from(".footer-bar", { y: _commonJs.bannerSize.h, duration: .3 }, "shrink");
-	tl.from(".t1", { y: 250, duration: .4 }, "shrink");
-	tl.to(".ypy1-1", { x: -133, y: -178, duration: .3 }, "shrink");
-	tl.to(".ypy1-2", { x: -173, y: -172, duration: .3 }, "shrink");
-	tl.to(".ypy1-3", { x: -140, y: -191, duration: .3 }, "shrink");
+	tl.from(".t1", { y: _commonJs.bannerSize.h, duration: .4 }, "shrink");
+	tl.to(".ypy1-1", _extends({}, ypy[0], { duration: .3 }), "shrink");
+	tl.to(".ypy1-2", _extends({}, ypy[1], { duration: .3 }), "shrink");
+	tl.to(".ypy1-3", _extends({}, ypy[2], { duration: .3 }), "shrink");
 
 	// tl.to(".ring", {y:`-=${shiftY}`, duration:.4}, "shrink")
 
@@ -144,10 +147,14 @@ function startBasic() {
 	tl.to(".t1", { opacity: 0, duration: .3 }, "+=" + READ.t1);
 	tl.from([".t2"], { opacity: 0, duration: .3 });
 
+	var ratio = 0.002;
+	var time = Math.min(Math.max(_commonJs.bannerSize.h * ratio, .2), .6);
+	console.log(time);
+
 	tl.add("end", "+=" + READ.t2);
-	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: .5 }, "end");
+	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: time }, "end");
 	tl.set(".frame2", { opacity: 1 }, "end");
-	tl.from(".frame2", { y: "+=" + _commonJs.bannerSize.h, duration: .5 }, "end");
+	tl.from(".frame2", { y: "+=" + _commonJs.bannerSize.h, duration: time }, "end");
 
 	tl.from(".url", { opacity: 0, duration: .3 });
 
@@ -225,18 +232,8 @@ var _commonJsPlayer_supportJs = require('../../_common/js/player_support.js');
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-start();
-function start() {
-
-	// 446px 502px
-	var data = { list: [".ring1_1", ".ring1_2", ".ring1_3"],
-		offsetX: 498, offsetY: 35, to: { x: 458, y: 509 } };
-
-	(0, _commonJsCommonJs.rotateScale1)(data);
-	(0, _commonJsCommonJs.rotateScale2)({ list: [".ypy1-1", ".ypy1-2", ".ypy1-3"], offsetX: 0, offsetY: 0, to: { x: 486, y: 45 } });
-
-	(0, _commonJsPlayer_supportJs.startBasic)({ shiftY: 0 });
-}
+var ypy = [{}, {}, {}];
+(0, _commonJsPlayer_supportJs.startBasic)({ ypy: ypy });
 
 },{"../../_common/js/common.js":1,"../../_common/js/player_support.js":3}]},{},[6])
 

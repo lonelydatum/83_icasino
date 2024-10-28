@@ -110,7 +110,10 @@ var READ = {
 	t2: 2
 };
 
-function startBasic() {
+function startBasic(_ref) {
+	var ypy = _ref.ypy;
+
+	console.log(ypy);
 	var tl = (0, _commonJs.init)();
 
 	var rotate = 150;
@@ -122,19 +125,19 @@ function startBasic() {
 	tl.from(".ring1_3", _extends({}, ring, { rotate: -rotate }), "arcs-in+=.2");
 	tl.from(".ring1_4", _extends({}, ring, { rotate: rotate }), "arcs-in+=.3");
 
-	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=0.2");
-	tl.from(".ypy1-2", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=.5");
-	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=.7");
+	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=0.2");
+	tl.from(".ypy1-2", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.4");
+	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.6");
 
 	tl.add("shrink", "+=.3");
 	tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
 	tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
-	tl.to(".hero", { x: 0, y: 0, scale: .50, duration: .3 }, "shrink");
+	// tl.to(".hero", {x:0, y:0, scale:.50, duration:.3}, "shrink")
 	tl.from(".footer-bar", { y: _commonJs.bannerSize.h, duration: .3 }, "shrink");
-	tl.from(".t1", { y: 250, duration: .4 }, "shrink");
-	tl.to(".ypy1-1", { x: -133, y: -178, duration: .3 }, "shrink");
-	tl.to(".ypy1-2", { x: -173, y: -172, duration: .3 }, "shrink");
-	tl.to(".ypy1-3", { x: -140, y: -191, duration: .3 }, "shrink");
+	tl.from(".t1", { y: _commonJs.bannerSize.h, duration: .4 }, "shrink");
+	tl.to(".ypy1-1", _extends({}, ypy[0], { duration: .3 }), "shrink");
+	tl.to(".ypy1-2", _extends({}, ypy[1], { duration: .3 }), "shrink");
+	tl.to(".ypy1-3", _extends({}, ypy[2], { duration: .3 }), "shrink");
 
 	// tl.to(".ring", {y:`-=${shiftY}`, duration:.4}, "shrink")
 
@@ -144,10 +147,14 @@ function startBasic() {
 	tl.to(".t1", { opacity: 0, duration: .3 }, "+=" + READ.t1);
 	tl.from([".t2"], { opacity: 0, duration: .3 });
 
+	var ratio = 0.002;
+	var time = Math.min(Math.max(_commonJs.bannerSize.h * ratio, .2), .6);
+	console.log(time);
+
 	tl.add("end", "+=" + READ.t2);
-	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: .5 }, "end");
+	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: time }, "end");
 	tl.set(".frame2", { opacity: 1 }, "end");
-	tl.from(".frame2", { y: "+=" + _commonJs.bannerSize.h, duration: .5 }, "end");
+	tl.from(".frame2", { y: "+=" + _commonJs.bannerSize.h, duration: time }, "end");
 
 	tl.from(".url", { opacity: 0, duration: .3 });
 
@@ -227,44 +234,47 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 
 document.getElementById("legalContent").innerHTML = 'Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games and screens may not appear as shown. Odds vary by game. Terms and conditions apply.\n\n*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark® Canadian Trust Study.';
 
-start();
-function start() {
+var ypy = [{ x: -132, y: -443, rotate: -4 }, { x: -209, y: -463, rotate: 9 }, { x: -172, y: -499, rotate: 10 }];
+(0, _commonJsPlayer_supportJs.startBasic)({ ypy: ypy });
 
-	// 0 118
-	var data = { list: [".ring1_1", ".ring1_2", ".ring1_3"],
-		offsetX: 200, offsetY: 62, to: { x: 200, y: 180 } };
+// function start(){
 
-	(0, _commonJsCommonJs.rotateScale1)(data);
-	(0, _commonJsCommonJs.rotateScale2)({ list: [".ypy1-1", ".ypy1-2", ".ypy1-3"], offsetX: 0, offsetY: 0, to: { x: 190, y: 50 } });
+// 	// 0 118
+// 	const data = {list:[".ring1_1", ".ring1_2", ".ring1_3"],
+// 	offsetX:200, offsetY:62, to:{x:200, y:180}}
 
-	var tl = (0, _commonJsCommonJs.init)();
-	// return
-	var rotate = 180;
-	tl.add("arcs-in");
-	tl.from(".ring1_1", { rotate: rotate, duration: .5 }, "arcs-in+=0");
-	tl.from(".ring1_2", { rotate: -rotate, duration: .8 }, "arcs-in+=0");
-	tl.from(".ring1_3", { rotate: rotate, duration: .6 }, "arcs-in+=0");
+// 	// rotateScale1(data)
+// 	rotateScale2({list:[".ypy1-1", ".ypy1-2", ".ypy1-3"], offsetX:0, offsetY:0, to:{x:190, y:50}})
 
-	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=0.3");
-	tl.from(".ypy1-2", { opacity: 0, rotate: 60, duration: .5 }, "arcs-in+=.5");
-	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .5 }, "arcs-in+=.3");
+// 	const tl = init()
+// 	return
+// 	const rotate = 180
+// 	tl.add("arcs-in")
+// 	tl.from(".ring1_1", {rotate:rotate, duration:.5}, "arcs-in+=0")
+// 	tl.from(".ring1_2", {rotate:-rotate, duration:.8}, "arcs-in+=0")
+// 	tl.from(".ring1_3", {rotate:rotate, duration:.6}, "arcs-in+=0")
 
-	tl.to([".ypy1-1", ".ypy1-2", ".ypy1-3"], { opacity: 0, duration: .3 }, "+=1");
+// 	tl.from(".ypy1-1", {opacity:0, rotate:-60, duration:.4}, "arcs-in+=0.3")
+// 	tl.from(".ypy1-2", {opacity:0, rotate:60, duration:.5}, "arcs-in+=.5")
+// 	tl.from(".ypy1-3", {opacity:0, rotate:-60, duration:.5}, "arcs-in+=.3")
 
-	tl.from(".t1", { y: 250, duration: .4 }, "shrink");
+// 	tl.to([".ypy1-1",".ypy1-2", ".ypy1-3"], {opacity:0, duration:.3}, "+=1")
 
-	tl.to(".t1", { opacity: 0, duration: .3 }, '+=' + _commonJsPlayer_supportJs.READ.t1);
-	tl.from([".t2", ".brand-logo"], { opacity: 0, duration: .3 });
+// 	tl.from(".t1", {y:250, duration:.4}, "shrink")
 
-	tl.add("end", '+=' + _commonJsPlayer_supportJs.READ.t2);
-	tl.to(".frame1", { y: '-=' + _commonJsCommonJs.bannerSize.h, duration: .5 }, "end");
-	tl.set(".frame2", { opacity: 1 }, "end");
-	tl.from(".frame2", { y: '+=' + _commonJsCommonJs.bannerSize.h, duration: .5 }, "end");
+// 	tl.to(".t1", {opacity:0, duration:.3}, `+=${READ.t1}`)
+// 	tl.from([".t2", ".brand-logo"], {opacity:0, duration:.3})
 
-	tl.from(".url", { opacity: 0, duration: .3 });
+// 	tl.add("end", `+=${READ.t2}`)
+// 	tl.to(".frame1", {y:`-=${bannerSize.h}`, duration:.5}, "end")
+// 	tl.set(".frame2", {opacity:1}, "end")
+// 	tl.from(".frame2", {y:`+=${bannerSize.h}`, duration:.5}, "end")
 
-	tl.add((0, _commonJsCommonJs.olg_ypy)(), "-=.3");
-}
+// 	tl.from(".url", {opacity:0, duration:.3})
+
+// 	tl.add(olg_ypy(), "-=.3")
+
+// }
 
 },{"../../_common/js/common.js":1,"../../_common/js/player_support.js":3}]},{},[6])
 

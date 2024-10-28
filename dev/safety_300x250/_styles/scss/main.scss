@@ -22,7 +22,9 @@
 	background-color: #bfff00;	
 }
 
-
+.ring_all{
+	@include pos-scale(-150, -125, .5);
+}
 
 .footer-bar{
 	width: 300px;
@@ -44,7 +46,6 @@
 
 .ypy{
 	transform-origin: 50% 300px;
-	@include pos-scale-rotate(-150, -150, .5, 0);
-	
+	@include pos-scale-rotate(-150, -150, .5, 0);	
 }
 

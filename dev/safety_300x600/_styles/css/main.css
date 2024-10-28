@@ -396,10 +396,38 @@ canvas, .text, .frame, .outline, img {
 .footer-bar {
   width: 300px;
   height: 243px;
-  background-color: #bfff00;
+  background-color: #4bfff4;
   -webkit-transform: translate(0px, 357px);
   -ms-transform: translate(0px, 357px);
   transform: translate(0px, 357px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ring {
+  -webkit-transform-origin: 325px 555px;
+  -ms-transform-origin: 325px 555px;
+  transform-origin: 325px 555px;
+  -webkit-transform: translate(-207px, -68px) scale(0.88) rotate(0deg);
+  -ms-transform: translate(-207px, -68px) scale(0.88) rotate(0deg);
+  transform: translate(-207px, -68px) scale(0.88) rotate(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ypy {
+  -webkit-transform-origin: 50% 800px;
+  -ms-transform-origin: 50% 800px;
+  transform-origin: 50% 800px;
+  -webkit-transform: translate(-150px, -400px) scale(0.5) rotate(0deg);
+  -ms-transform: translate(-150px, -400px) scale(0.5) rotate(0deg);
+  transform: translate(-150px, -400px) scale(0.5) rotate(0deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
