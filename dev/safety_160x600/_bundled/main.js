@@ -113,9 +113,9 @@ var READ = {
 function startBasic(_ref) {
 	var ypy = _ref.ypy;
 
-	console.log(ypy);
+	var isPort = _commonJs.bannerSize.h > _commonJs.bannerSize.w;
 	var tl = (0, _commonJs.init)();
-
+	// return;
 	var rotate = 150;
 	tl.add("arcs-in");
 	TweenLite.set(".ring", { opacity: 1 });
@@ -130,14 +130,13 @@ function startBasic(_ref) {
 	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.6");
 
 	tl.add("shrink", "+=.3");
-	tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
-	tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
-
-	if (_commonJs.bannerSize.w < _commonJs.bannerSize.h) {
+	if (isPort) {
+		tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
+		tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
 		tl.to(".hero", { x: 0, y: 0, scale: .50, duration: .3 }, "shrink");
+		tl.from(".footer-bar", { y: _commonJs.bannerSize.h, duration: .3 }, "shrink");
 	}
 
-	tl.from(".footer-bar", { y: _commonJs.bannerSize.h, duration: .3 }, "shrink");
 	tl.from(".t1", { y: _commonJs.bannerSize.h, duration: .4 }, "shrink");
 	tl.to(".ypy1-1", _extends({}, ypy[0], { duration: .3 }), "shrink");
 	tl.to(".ypy1-2", _extends({}, ypy[1], { duration: .3 }), "shrink");
