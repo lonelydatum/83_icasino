@@ -1,0 +1,43 @@
+@import '../../../_common/styles/b970x250.scss';
+@import '../../../_common/styles/ypy.scss';
+
+#banner{
+	background-color: white;
+}
+
+#banner, .frame{
+	// overflow: visible;
+}
+
+.hero{
+	// opacity:.5;
+	// @include pos-scale(-89, 0, .5);
+}
+
+.frame2{
+	background-color: #bfff00;	
+}
+
+
+
+.footer-bar{
+	// width: 300px;
+	// height: 90px;
+	// background-color: #bfff00;
+	// @include pos(0, 160);
+}
+
+
+
+.ring{
+	// opacity: 0;
+	transform-origin: 700px 212px;
+	@include pos-scale-rotate(-19, -4, .98, 0);	
+	
+}
+
+.ypy{
+	transform-origin: 1200px 500px;
+	@include pos-scale-rotate(-600, -251, .5, 0);	
+}
+

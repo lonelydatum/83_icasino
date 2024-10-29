@@ -76,6 +76,7 @@ function log_free(projectName){
         
         .pipe(replace("../_common/images/"+size+"/"+name+"/", ''))
         .pipe(replace("../_common/images/"+size+"/", ''))
+        .pipe(replace("../_common/images/_common/", ''))
         .pipe(replace("txt/", ''))
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))
         .on("end", function(){
