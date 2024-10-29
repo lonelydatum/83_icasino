@@ -6,4 +6,10 @@ const ypy = [
 	{},
 	{}
 ]
-startBasic({ypy})
+
+const youPlayYou = {
+	opacity: 0,
+	duration:.3
+}
+
+startBasic({ypy, youPlayYou})

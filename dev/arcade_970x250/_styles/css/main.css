@@ -375,21 +375,14 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-#banner {
-  background-color: white;
-}
-
 .frame2 {
   background-color: #bfff00;
 }
 
 .ring {
-  -webkit-transform-origin: 700px 212px;
-  -ms-transform-origin: 700px 212px;
-  transform-origin: 700px 212px;
-  -webkit-transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
-  -ms-transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
-  transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
+  -webkit-transform: translate(84px, -129px) scale(1.35) rotate(0deg);
+  -ms-transform: translate(84px, -129px) scale(1.35) rotate(0deg);
+  transform: translate(84px, -129px) scale(1.35) rotate(0deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

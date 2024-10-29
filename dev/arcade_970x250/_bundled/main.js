@@ -229,7 +229,13 @@ var _commonJsYpy_arcadeJs = require('../../_common/js/ypy_arcade.js');
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 var ypy = [{}, {}, {}];
-(0, _commonJsYpy_arcadeJs.startBasic)({ ypy: ypy });
+
+var youPlayYou = {
+	opacity: 0,
+	duration: .3
+};
+
+(0, _commonJsYpy_arcadeJs.startBasic)({ ypy: ypy, youPlayYou: youPlayYou });
 
 },{"../../_common/js/common.js":1,"../../_common/js/ypy_arcade.js":4}]},{},[6])
 
