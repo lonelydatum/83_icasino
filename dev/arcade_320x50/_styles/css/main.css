@@ -377,17 +377,10 @@ canvas, .text, .frame, .outline, img {
   background-color: #4bfff4;
 }
 
-.frame2 {
-  background-color: #4bfff4;
-}
-
 .ring {
-  -webkit-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  -webkit-transform: translate(-223px, -283px) scale(0.45) rotate(0deg);
-  -ms-transform: translate(-223px, -283px) scale(0.45) rotate(0deg);
-  transform: translate(-223px, -283px) scale(0.45) rotate(0deg);
+  -webkit-transform: translate(-370px, -330px) scale(0.55) rotate(0deg);
+  -ms-transform: translate(-370px, -330px) scale(0.55) rotate(0deg);
+  transform: translate(-370px, -330px) scale(0.55) rotate(0deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

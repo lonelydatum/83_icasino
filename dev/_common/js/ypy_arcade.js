@@ -23,7 +23,7 @@ const READ = {
 function startBasic({ypy, youPlayYou}){
 	
 	const isNormal = bannerSize.w/bannerSize.h < 2
-	console.log(isNormal);
+	
 	const tl = init()
 	// return
 	const rotate = 222
@@ -37,7 +37,10 @@ function startBasic({ypy, youPlayYou}){
 	tl.from(".ypy1-2", {opacity:0, rotate:-60, duration:.4}, "arcs-in+=.4")
 	tl.from(".ypy1-3", {opacity:0, rotate:-60, duration:.4}, "arcs-in+=.6")
 
-	
+	if(bannerSize.w===320){
+		tl.to(".ypy", {opacity:0, duration:.3}, "+=.5")	
+	}
+
 	tl.add("t1")
 	if(ypy[0]){
 		tl.to(".hero", {...ypy[0]}, "t1")

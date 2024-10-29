@@ -144,7 +144,7 @@ function startBasic(_ref) {
 	var youPlayYou = _ref.youPlayYou;
 
 	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
-	console.log(isNormal);
+
 	var tl = (0, _commonJs.init)();
 	// return
 	var rotate = 222;
@@ -156,6 +156,10 @@ function startBasic(_ref) {
 	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=0.2");
 	tl.from(".ypy1-2", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.4");
 	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.6");
+
+	if (_commonJs.bannerSize.w === 320) {
+		tl.to(".ypy", { opacity: 0, duration: .3 }, "+=.5");
+	}
 
 	tl.add("t1");
 	if (ypy[0]) {
