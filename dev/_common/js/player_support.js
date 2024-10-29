@@ -20,7 +20,8 @@ const READ = {
 
 function startBasic({ypy}){
 	
-	const isPort = bannerSize.h>bannerSize.w
+	const isNormal = bannerSize.w/bannerSize.h < 2
+	console.log(isNormal);
 	const tl = init()
 	// return;
 	const rotate = 150
@@ -37,7 +38,7 @@ function startBasic({ypy}){
 	tl.from(".ypy1-3", {opacity:0, rotate:-60, duration:.4}, "arcs-in+=.6")
 
 	tl.add("shrink", "+=.3")
-	if(isPort){
+	if(isNormal){
 		tl.to(".ring", {opacity:0, duration:.3}, "shrink")
 		tl.from(".ring_all", {opacity:0, duration:.3}, "shrink")	
 		tl.to(".hero", {x:0, y:0, scale:.50, duration:.3}, "shrink")	
@@ -71,7 +72,7 @@ function startBasic({ypy}){
 
 	const ratio = 0.002
 	const time = Math.min(Math.max(bannerSize.h*ratio, .2), .6)
-	console.log(time);
+	
 
 	tl.add("end", `+=${READ.t2}`)
 	tl.to(".frame1", {y:`-=${bannerSize.h}`, duration:time}, "end")

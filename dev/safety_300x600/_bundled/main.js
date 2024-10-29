@@ -113,7 +113,8 @@ var READ = {
 function startBasic(_ref) {
 	var ypy = _ref.ypy;
 
-	var isPort = _commonJs.bannerSize.h > _commonJs.bannerSize.w;
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
+	console.log(isNormal);
 	var tl = (0, _commonJs.init)();
 	// return;
 	var rotate = 150;
@@ -130,7 +131,7 @@ function startBasic(_ref) {
 	tl.from(".ypy1-3", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=.6");
 
 	tl.add("shrink", "+=.3");
-	if (isPort) {
+	if (isNormal) {
 		tl.to(".ring", { opacity: 0, duration: .3 }, "shrink");
 		tl.from(".ring_all", { opacity: 0, duration: .3 }, "shrink");
 		tl.to(".hero", { x: 0, y: 0, scale: .50, duration: .3 }, "shrink");
@@ -152,7 +153,6 @@ function startBasic(_ref) {
 
 	var ratio = 0.002;
 	var time = Math.min(Math.max(_commonJs.bannerSize.h * ratio, .2), .6);
-	console.log(time);
 
 	tl.add("end", "+=" + READ.t2);
 	tl.to(".frame1", { y: "-=" + _commonJs.bannerSize.h, duration: time }, "end");
