@@ -9,9 +9,9 @@
 	// overflow: visible;
 }
 .hero{
-	// transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
 	
-	// @include pos-scale(-80, -300, .5);
+	@include pos-scale(-80, -300, .5);
 	
 }
 

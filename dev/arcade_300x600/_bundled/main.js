@@ -223,7 +223,7 @@ var _commonJsYpy_arcadeJs = require('../../_common/js/ypy_arcade.js');
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-var ypy = [{ x: -132, y: -443, rotate: -4 }, { x: -209, y: -463, rotate: 9 }, { x: -172, y: -499, rotate: 10 }];
+var ypy = [];
 
 (0, _commonJsYpy_arcadeJs.startBasic)({ ypy: ypy });
 

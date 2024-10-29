@@ -5,10 +5,14 @@
 	background-color: white;
 }
 
+#banner, .frame{
+	// overflow: visible;
+
+}
 .hero{
 	// transform-origin: 50% 50%;
 	
-	@include pos-scale(-100, 12, .82);
+	// @include pos-scale(-100, 12, .82);
 	
 }
 
@@ -27,8 +31,9 @@
 
 .ring{
 	// opacity: 0;
-	transform-origin: 325px 555px;
-	@include pos-scale-rotate(-207, -68, .88, 0);
+	
+	@include pos-scale-rotate(-372, -146, .95, 0);
+	
 	
 }
 
@@ -37,3 +42,7 @@
 	@include pos-scale-rotate(-150, -400, .5, 0);	
 }
 
+.ypy-all{
+	
+	@include pos-scale(20, 417, 1.74);
+}
