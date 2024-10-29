@@ -387,9 +387,9 @@ canvas, .text, .frame, .outline, img {
   -webkit-transform-origin: 700px 212px;
   -ms-transform-origin: 700px 212px;
   transform-origin: 700px 212px;
-  -webkit-transform: translate(0px, -3px) scale(0.88) rotate(0deg);
-  -ms-transform: translate(0px, -3px) scale(0.88) rotate(0deg);
-  transform: translate(0px, -3px) scale(0.88) rotate(0deg);
+  -webkit-transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
+  -ms-transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
+  transform: translate(-19px, -4px) scale(0.98) rotate(0deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
