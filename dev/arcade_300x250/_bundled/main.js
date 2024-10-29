@@ -141,15 +141,16 @@ var READ = {
 
 function startBasic(_ref) {
 	var ypy = _ref.ypy;
+	var youPlayYou = _ref.youPlayYou;
 
 	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 	console.log(isNormal);
 	var tl = (0, _commonJs.init)();
 	// return
-	var rotate = 150;
+	var rotate = 222;
 	tl.add("arcs-in");
 	TweenLite.set(".ring", { opacity: 1 });
-	var ring = { opacity: 0, ease: "power2.out", duration: .4 };
+	var ring = { opacity: 0, ease: "power2.out", duration: .7 };
 	tl.from(".ring", _extends({}, ring, { rotate: -rotate }), "arcs-in+=0");
 
 	tl.from(".ypy1-1", { opacity: 0, rotate: -60, duration: .4 }, "arcs-in+=0.2");
@@ -161,7 +162,7 @@ function startBasic(_ref) {
 		tl.to(".hero", _extends({}, ypy[0]), "t1");
 	}
 
-	tl.from(".t1", { y: _commonJs.bannerSize.h / 2, duration: .4 }, "t1");
+	tl.from(".t1", { y: 50, opacity: 0, duration: .4 }, "t1");
 
 	tl.add("t2", "+=" + READ.t1);
 	tl.to(".t1", { opacity: 0, duration: .3 }, "t2");
@@ -171,6 +172,10 @@ function startBasic(_ref) {
 	tl.add("end");
 	if (ypy[1]) {
 		tl.to(".hero", _extends({}, ypy[1]), "end");
+	}
+
+	if (youPlayYou) {
+		tl.to(".ypy", _extends({}, youPlayYou), "end");
 	}
 
 	tl.from(".url", { opacity: 0, duration: .3 }, "end");

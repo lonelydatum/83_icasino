@@ -368,18 +368,10 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-#banner {
-  background-color: #4bfff4;
-}
-
-.frame {
-  background-color: #4bfff4;
-}
-
 .hero {
-  -webkit-transform: translate(444px, 0px) scale(0.5, 0.5);
-  -ms-transform: translate(444px, 0px) scale(0.5, 0.5);
-  transform: translate(444px, 0px) scale(0.5, 0.5);
+  -webkit-transform: translate(0px, 0px) scale(0.5, 0.5);
+  -ms-transform: translate(0px, 0px) scale(0.5, 0.5);
+  transform: translate(0px, 0px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -388,12 +380,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 .ring {
-  -webkit-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  -webkit-transform: translate(-397px, -424px) scale(0.56) rotate(0deg);
-  -ms-transform: translate(-397px, -424px) scale(0.56) rotate(0deg);
-  transform: translate(-397px, -424px) scale(0.56) rotate(0deg);
+  -webkit-transform: translate(-67px, -255px) scale(0.86) rotate(0deg);
+  -ms-transform: translate(-67px, -255px) scale(0.86) rotate(0deg);
+  transform: translate(-67px, -255px) scale(0.86) rotate(0deg);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -408,6 +397,17 @@ canvas, .text, .frame, .outline, img {
   -webkit-transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
   -ms-transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
   transform: translate(-550px, -251px) scale(0.5) rotate(0deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
+}
+
+.ypy-all {
+  -webkit-transform: translate(242px, 18px) scale(1.295, 1.295);
+  -ms-transform: translate(242px, 18px) scale(1.295, 1.295);
+  transform: translate(242px, 18px) scale(1.295, 1.295);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

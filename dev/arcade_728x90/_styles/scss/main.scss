@@ -2,7 +2,7 @@
 @import '../../../_common/styles/ypy.scss';
 
 #banner{
-	background-color: #4bfff4;
+	// background-color: #4bfff4;
 }
 
 #banner, .frame{
@@ -11,15 +11,15 @@
 
 .hero{
 	// opacity:.5;
-	// @include pos-scale(-89, 0, .5);
+	@include pos-scale(0, 0, .5);
 }
 
 .frame{
-	background-color: #4bfff4;	
+	// background-color: #4bfff4;	
 }
 
 .hero{
-	@include pos-scale(444, 0, .5);
+	// @include pos-scale(444, 0, .5);
 }
 
 .footer-bar{
@@ -32,9 +32,9 @@
 
 
 .ring{
-	// opacity: 0;
-	transform-origin: 50% 100%;
-	@include pos-scale-rotate(-397, -424, .56, 0);
+	
+	
+	@include pos-scale-rotate(-67, -255, .86, 0);
 	
 	
 }
@@ -44,3 +44,7 @@
 	@include pos-scale-rotate(-550, -251, .5, 0);	
 }
 
+
+.ypy-all{	
+	@include pos-scale(242, 18, 1.295);
+}

@@ -4,7 +4,13 @@ import {bannerSize, init, olg_ypy, rotateScale1, rotateScale2} from '../../_comm
 
 const ypy = [
 	{},
-	{},
+	{x:49},
 	{}
 ]
-startBasic({ypy})
+
+const youPlayYou = {
+	opacity: 0,
+	duration:.3
+}
+
+startBasic({ypy, youPlayYou})

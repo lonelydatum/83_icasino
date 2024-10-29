@@ -20,16 +20,16 @@ const READ = {
 
 
 
-function startBasic({ypy}){
+function startBasic({ypy, youPlayYou}){
 	
 	const isNormal = bannerSize.w/bannerSize.h < 2
 	console.log(isNormal);
 	const tl = init()
 	// return
-	const rotate = 150
+	const rotate = 222
 	tl.add("arcs-in")
 	TweenLite.set(".ring", {opacity:1})
-	const ring = {opacity:0, ease: "power2.out", duration:.4}
+	const ring = {opacity:0, ease: "power2.out", duration:.7}
 	tl.from(".ring", {...ring, rotate:-rotate}, "arcs-in+=0")
 	
 
@@ -43,7 +43,7 @@ function startBasic({ypy}){
 		tl.to(".hero", {...ypy[0]}, "t1")
 	}
 	
-	tl.from(".t1", {y:bannerSize.h/2, duration:.4}, "t1")
+	tl.from(".t1", {y:50, opacity:0, duration:.4}, "t1")
 	
 
 
@@ -61,6 +61,9 @@ function startBasic({ypy}){
 		tl.to(".hero", {...ypy[1]}, "end")	
 	}
 	
+	if(youPlayYou){
+		tl.to(".ypy", {...youPlayYou}, "end")	
+	}
 
 	
 	
