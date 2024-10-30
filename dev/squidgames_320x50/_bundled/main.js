@@ -144,6 +144,9 @@ TweenLite.set("#banner", { backgroundColor: "#ff52ee" });
 
 function start(heroScale) {
 	var tl = (0, _commonJs.init)();
+	// return
+
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 
 	tl.add("bars");
 
@@ -157,14 +160,17 @@ function start(heroScale) {
 	tl.from(".ypy-play", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=.8");
 	tl.from(".ypy-you2", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=1");
 
-	tl.add("scale", 1.5);
+	tl.add("scale", "+=.3");
 
 	tl.to(".hero-all", { x: 0, y: 0, scale: .5, duration: .4 }, "scale");
-	tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	if (isNormal) {
+		tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	}
+
 	tl.from(".frame1 .b0", { opacity: 0, duration: .4 }, "scale");
 	toNormal(tl, ".ypy", "scale");
 
-	tl.from(".inset", { ease: "power1.out", opacity: 0, x: 80, duration: .3 }, "scale");
+	tl.from(".inset", { ease: "power1.out", opacity: 0, y: 80, duration: .3 }, "scale");
 	tl.from(".logo", { ease: "power1.out", opacity: 0, duration: .3 }, "scale");
 
 	tl.from(".t1", { ease: "power1.out", opacity: 0, y: 30, duration: .3 }, "+=.2");
@@ -230,7 +236,7 @@ exports.ypyScroll = ypyScroll;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-var _commonJsYpyJs = require('../../_common/js/ypy.js');
+var _commonJsYpySquidJs = require('../../_common/js/ypy-squid.js');
 
 document.getElementById("legalContent").innerHTML = 'Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games and screens may not appear as shown. Odds vary by game.\n\nTerms and conditions apply.';
 
@@ -246,9 +252,7 @@ function start(heroScale) {
 	tl.from(".frame1 .top.b2", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.3");
 	tl.from(".frame1 .top.b4", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.6");
 	tl.from(".frame1 .top.b5", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.9");
-	tl.from(".frame1 .bottom.b6", { y: _commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.2");
-	tl.from(".frame1 .top.b7", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.8");
-	tl.from(".frame1 .top.b8", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.5");
+
 	tl.from(".frame1 .bottom.b1", { y: _commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=1");
 	tl.from(".frame1 .bottom.b3", { y: _commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.5");
 
@@ -261,18 +265,22 @@ function start(heroScale) {
 	// tl.to(".hero-all", heroScale, "scale")
 
 	tl.to([".ypy-you1", ".ypy-you2", ".ypy-play"], { opacity: 0, duration: .3 }, "+=.5");
-	tl.from(".t1", { ease: "power1.out", opacity: 0, duration: .3 });
-	tl.to(".t1", { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpyJs.READ.t1);
+	tl.from([".t1", ".logo"], { ease: "power1.out", opacity: 0, duration: .3 });
+
+	tl.to(".t1", { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpySquidJs.READ.t1);
+
+	tl.from(".t2", { ease: "power1.out", opacity: 0, duration: .3 });
+	tl.to([".t2", ".logo"], { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpySquidJs.READ.t2);
 
 	tl.add("scroller");
 	tl.from(".url", { opacity: 0, duration: .3 }, "scroller");
 
-	tl.add((0, _commonJsYpyJs.olg_ypy)(), "+=.3");
+	tl.add((0, _commonJsYpySquidJs.olg_ypy)(), "+=.3");
 
 	return tl;
 }
 
-},{"../../_common/js/common.js":1,"../../_common/js/ypy.js":4}]},{},[6])
+},{"../../_common/js/common.js":1,"../../_common/js/ypy-squid.js":4}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

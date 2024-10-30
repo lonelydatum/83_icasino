@@ -146,6 +146,8 @@ function start(heroScale) {
 	var tl = (0, _commonJs.init)();
 	// return
 
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
+
 	tl.add("bars");
 
 	tl.from(".frame1 .top.b1", { y: -_commonJs.bannerSize.h, duration: .5 }, "bars+=.3");
@@ -161,7 +163,10 @@ function start(heroScale) {
 	tl.add("scale", "+=.3");
 
 	tl.to(".hero-all", { x: 0, y: 0, scale: .5, duration: .4 }, "scale");
-	tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	if (isNormal) {
+		tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	}
+
 	tl.from(".frame1 .b0", { opacity: 0, duration: .4 }, "scale");
 	toNormal(tl, ".ypy", "scale");
 

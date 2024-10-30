@@ -24,6 +24,8 @@ function start(heroScale){
 	const tl = init()	
 	// return
 	
+	const isNormal = bannerSize.w/bannerSize.h < 2
+
 	tl.add("bars")
 	
 	tl.from(".frame1 .top.b1", {y:-bannerSize.h, duration:.5}, "bars+=.3")
@@ -43,7 +45,10 @@ function start(heroScale){
 	
 	
 	tl.to(".hero-all", {x:0, y:0, scale:.5, duration:.4}, "scale")
-	tl.to(".frame1 .bar", {opacity:0, duration:.4}, "scale")	
+	if(isNormal){
+		tl.to(".frame1 .bar", {opacity:0, duration:.4}, "scale")		
+	}
+	
 	tl.from(".frame1 .b0", {opacity:0, duration:.4}, "scale")
 	toNormal(tl, ".ypy", "scale")
 	

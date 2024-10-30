@@ -144,6 +144,9 @@ TweenLite.set("#banner", { backgroundColor: "#ff52ee" });
 
 function start(heroScale) {
 	var tl = (0, _commonJs.init)();
+	// return
+
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 
 	tl.add("bars");
 
@@ -157,14 +160,17 @@ function start(heroScale) {
 	tl.from(".ypy-play", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=.8");
 	tl.from(".ypy-you2", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=1");
 
-	tl.add("scale", 1.5);
+	tl.add("scale", "+=.3");
 
 	tl.to(".hero-all", { x: 0, y: 0, scale: .5, duration: .4 }, "scale");
-	tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	if (isNormal) {
+		tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
+	}
+
 	tl.from(".frame1 .b0", { opacity: 0, duration: .4 }, "scale");
 	toNormal(tl, ".ypy", "scale");
 
-	tl.from(".inset", { ease: "power1.out", opacity: 0, x: 80, duration: .3 }, "scale");
+	tl.from(".inset", { ease: "power1.out", opacity: 0, y: 80, duration: .3 }, "scale");
 	tl.from(".logo", { ease: "power1.out", opacity: 0, duration: .3 }, "scale");
 
 	tl.from(".t1", { ease: "power1.out", opacity: 0, y: 30, duration: .3 }, "+=.2");
@@ -228,13 +234,13 @@ exports.ypyScroll = ypyScroll;
 },{}],6:[function(require,module,exports){
 "use strict";
 
-var _commonJsYpyJs = require('../../_common/js/ypy.js');
+var _commonJsYpySquidJs = require('../../_common/js/ypy-squid.js');
 
 // tl.to(".hero-all", {ease:"power1.out", x:0, scale:.5, duration:.3}, "scale")
 var heroScale = { ease: "power1.out", duration: .3 };
-(0, _commonJsYpyJs.start)(heroScale);
+(0, _commonJsYpySquidJs.start)(heroScale);
 
-},{"../../_common/js/ypy.js":4}]},{},[6])
+},{"../../_common/js/ypy-squid.js":4}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map
