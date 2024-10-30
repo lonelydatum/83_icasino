@@ -22,7 +22,7 @@ TweenLite.set("#banner", {backgroundColor:"#ff52ee"})
 
 function start(heroScale){	
 	const tl = init()	
-	
+	// return
 	
 	tl.add("bars")
 	
@@ -39,7 +39,7 @@ function start(heroScale){
 
 	
 
-	tl.add("scale", 1.5)
+	tl.add("scale", "+=.3")
 	
 	
 	tl.to(".hero-all", {x:0, y:0, scale:.5, duration:.4}, "scale")
@@ -47,7 +47,7 @@ function start(heroScale){
 	tl.from(".frame1 .b0", {opacity:0, duration:.4}, "scale")
 	toNormal(tl, ".ypy", "scale")
 	
-	tl.from(".inset", {ease:"power1.out", opacity:0, x:80 , duration:.3}, "scale")
+	tl.from(".inset", {ease:"power1.out", opacity:0, y:80 , duration:.3}, "scale")
 	tl.from(".logo", {ease:"power1.out", opacity:0,  duration:.3}, "scale")
 	
 	tl.from(".t1", {ease:"power1.out", opacity:0, y:30 , duration:.3}, "+=.2")

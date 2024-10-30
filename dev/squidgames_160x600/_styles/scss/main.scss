@@ -6,10 +6,20 @@
 	background-color: #4cfff4;
 }
 
+
 .hero-all{
-	@include pos-scale(-70, -1, .85);	
+	@include pos-scale(-13, -92, .95);		
 	
 }
 
+.ypy-you1{
+	@include pos-scale(-24, -20, .66);		
+}
 
+.ypy-play{
+	@include pos-scale(-19, -99, .66);		
+}
 
+.ypy-you2{
+	@include pos-scale(-47, 53, .66);	
+}

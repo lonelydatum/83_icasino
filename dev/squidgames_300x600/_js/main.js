@@ -1,4 +1,4 @@
-import {start} from '../../_common/js/ypy.js'
+import {start} from '../../_common/js/ypy-squid.js'
 
 
 // tl.to(".hero-all", {ease:"power1.out", x:0, scale:.5, duration:.3}, "scale")

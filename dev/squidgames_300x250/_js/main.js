@@ -1,4 +1,4 @@
-import {start} from '../../_common/js/ypy.js'
+import {start} from '../../_common/js/ypy-squid.js'
 
 
 
