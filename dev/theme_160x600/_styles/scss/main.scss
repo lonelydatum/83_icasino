@@ -3,7 +3,7 @@
 
 #banner{
 	background-color: white;
-	background-color: #a56bff;
+	background-color: #a6a6ae;
 }
 
 
@@ -21,59 +21,20 @@
 }
 
 
-.hero{
-	// @include pos-scale(-96, 0, .71);
+.hero{	
+	@include pos-scale(-51, 16, .793);
+	// opacity: .6;
 }
 
-.ypy-text{
-	transform-origin: 50% 50%;
-
-	filter: drop-shadow(5px 5px 8px rgba(0,0,0,.8));
-}
-.coin{
-	transform-origin: 50% 50%;
+.ypy-1{
+	@include pos-scale(7, 2, .63);
+	
 }
 
-
-.ypy-text-1{
-	@include pos-scale-rotate(19, 31, .5, -27);
+.ypy-2{
+	@include pos-scale(-36, -97, .63);
 }
 
-.ypy-text-2{
-	@include pos-scale-rotate(19, 137, .5, 14);
+.ypy-3{
+	@include pos-scale(-36, -17, .63);
 }
-
-.ypy-text-3{
-	@include pos-scale-rotate(73, 207, .5, -33);
-}
-
-.coin-1{
-	@include pos-scale(18, -26, .5);
-}
-.coin-2{
-	@include pos-scale(-54, -79, .5);
-}
-.coin-3{
-	@include pos-scale(-200, -200, .5);
-}
-.coin-4{
-	@include pos-scale(-88, 300, .5);
-}
-.coin-5{
-	@include pos-scale(-28, 169, .5);
-}
-.coin-6{
-	@include pos-scale(-246, 379, .5);
-}
-.coin-7{
-	@include pos-scale(69, 413, .5);
-}
-.coin-8{
-	@include pos-scale(69, 334, .5);
-}
-
-.coin-9{
-	@include pos-scale(-17, 89, .5);
-}
-
-

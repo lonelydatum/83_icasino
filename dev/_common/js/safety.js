@@ -18,50 +18,79 @@ const READ = {
 	t2: 2.6
 }
 
-
-
-function rain({coins, skew, y=3}){
-	const yPos = -bannerSize.h*y
-	console.log(-bannerSize.h*y);
-	const tl = new TimelineMax()
-	tl.from(".ypy-text-1", {duration:1.5, y:yPos, skewX:-skew, skewY:skew, rotate:"+=160"}, .1)
-	tl.from(".ypy-text-2", {duration:1.5, y:yPos, skewX:-skew, skewY:skew, rotate:"+=160"}, .3)
-	tl.from(".ypy-text-3", {duration:1.5, y:yPos, skewX:-skew, skewY:skew, rotate:"+=160"}, 0)
-	const total = coins+1
-	for(let i=1;i<total;i++){
-		const percent = i/total
-		const rotate = 120+(50 * percent)
-		const delay = percent		
-		const skewXY = skew + (30*percent)
-		tl.from(`.coin-${i}`, {duration:1.7, y:yPos, skewX:skewXY, skewY:-skewXY, rotate:`+=${rotate}`}, percent)	
-	}
-	return tl
+function toNormal(tl, el, frame){
+	tl.to(el, {scale:.5, x:0, y:0, duration:.4}, frame)
 }
 
-function listIn(tl, list){
-	tl.add("list_1")
+function centerScale(el, x, y){
+	TweenLite.set(el, {transformOrigin:"50% 50%", x:-bannerSize.w/2, y:-bannerSize.h/2})
+}
+
+function listIn(tl, list, frameLabel){
+	tl.add(frameLabel)
 	const xy = 50
 	list.map((a, i)=>{
-		tl.from(a[0], {opacity:0, x:a[1]*xy, y:a[2]*xy}, `list_1+=${i*.1}`)
+		tl.from(a[0], {duration:.3, opacity:0, x:a[1]*xy, y:a[2]*xy}, `${frameLabel}+=${i*.1}`)
+	})
+}
+
+
+function listOut(tl, list, frameLabel){
+	
+	const xy = 50
+	list.map((a, i)=>{
+		tl.to(a[0], {duration:.2, opacity:0, x:a[1]*xy, y:a[2]*xy}, frameLabel)
 	})
 }
 
 function start({coins=8, skew, y=3}){
+	centerScale(".all_2")
+	centerScale(".all_1")
 	const tl = init()
-	const list_a = [
-		[".a1", -1, 0],
-		[".a2", 1, 0],
-		[".a3", 1, 0],
-		[".a4", 1, 0],
-		[".a5", -1, 0],
-		[".a6", 1, -1],
-	]
-	listIn(tl, list_a)
+	
+
 	
 	
 
+	tl.add("frame1")
+	tl.from(".all_1", {ease:"power3.out", scale:2, duration:.8, opacity:0, rotate:111, y:99}, "frame1")
+	
+
+	tl.from(".ypy-1", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1")
+	tl.from(".ypy-2", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1+=.2")
+	tl.from(".ypy-3", {duration:.5, ease:"back.out", opacity:0, y:-100}, "frame1+=.4")
+
+
+	tl.add("frame2", "+=.2")
+	tl.from(".cover", {duration:.5, opacity:0}, "frame2")
+	tl.to(".all_1", {scale:2, duration:.3}, "frame2")
+	toNormal(tl, ".hero", "frame2")
+	toNormal(tl, ".ypy", "frame2")
+	// tl.to(".hero", {scale:2, duration:.3}, "frame2")
+
+	tl.from(".inset", { duration:.3, opacity:0, y:22})
+
+	tl.from(".all_2", {scale:2, duration:.8, opacity:0, rotate:111, y:99}, "frame2")
+	tl.from(".t1", { duration:.3, opacity:0})
+	tl.to(".t1", { duration:.3, opacity:0}, `+=${READ.t1}`)
+	tl.from(".t2", { duration:.3, opacity:0})
+
+	tl.add("end", `+=${READ.t2}`)
+	tl.to(".frame1", { duration:.6, y:-bannerSize.h}, `end`)
+	tl.set(".frame2", {opacity:1}, "end")
+	tl.from(".frame2", { duration:.6, y:bannerSize.h}, `end`)
+
+
+	tl.from(".url", {opacity:0, duration:.3}, "+=.3")
+
+
+
+
+	tl.add(olg_ypy(), "-=.3")
+
+	// tl.to(".all_2", {duration:.3, opacity:0}, "+=1")
 }
 
 
 
-export { start, rain, init, bannerSize, READ, olg_ypy }
+export { start,  init, bannerSize, READ, olg_ypy }

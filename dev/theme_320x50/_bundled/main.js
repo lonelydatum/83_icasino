@@ -134,51 +134,75 @@ var READ = {
 	t2: 2.6
 };
 
-function rain(_ref) {
-	var coins = _ref.coins;
+function toNormal(tl, el, frame) {
+	tl.to(el, { scale: .5, x: 0, y: 0, duration: .4 }, frame);
+}
+
+function centerScale(el, x, y) {
+	TweenLite.set(el, { transformOrigin: "50% 50%", x: -_commonJs.bannerSize.w / 2, y: -_commonJs.bannerSize.h / 2 });
+}
+
+function listIn(tl, list, frameLabel) {
+	tl.add(frameLabel);
+	var xy = 50;
+	list.map(function (a, i) {
+		tl.from(a[0], { duration: .3, opacity: 0, x: a[1] * xy, y: a[2] * xy }, frameLabel + "+=" + i * .1);
+	});
+}
+
+function listOut(tl, list, frameLabel) {
+
+	var xy = 50;
+	list.map(function (a, i) {
+		tl.to(a[0], { duration: .2, opacity: 0, x: a[1] * xy, y: a[2] * xy }, frameLabel);
+	});
+}
+
+function start(_ref) {
+	var _ref$coins = _ref.coins;
+	var coins = _ref$coins === undefined ? 8 : _ref$coins;
 	var skew = _ref.skew;
 	var _ref$y = _ref.y;
 	var y = _ref$y === undefined ? 3 : _ref$y;
 
-	var yPos = -_commonJs.bannerSize.h * y;
-	console.log(-_commonJs.bannerSize.h * y);
-	var tl = new TimelineMax();
-	tl.from(".ypy-text-1", { duration: 1.5, y: yPos, skewX: -skew, skewY: skew, rotate: "+=160" }, .1);
-	tl.from(".ypy-text-2", { duration: 1.5, y: yPos, skewX: -skew, skewY: skew, rotate: "+=160" }, .3);
-	tl.from(".ypy-text-3", { duration: 1.5, y: yPos, skewX: -skew, skewY: skew, rotate: "+=160" }, 0);
-	var total = coins + 1;
-	for (var i = 1; i < total; i++) {
-		var percent = i / total;
-		var rotate = 120 + 50 * percent;
-		var delay = percent;
-		var skewXY = skew + 30 * percent;
-		tl.from(".coin-" + i, { duration: 1.7, y: yPos, skewX: skewXY, skewY: -skewXY, rotate: "+=" + rotate }, percent);
-	}
-	return tl;
-}
-
-function listIn(tl, list) {
-	tl.add("list_1");
-	var xy = 50;
-	list.map(function (a, i) {
-		tl.from(a[0], { opacity: 0, x: a[1] * xy, y: a[2] * xy }, "list_1+=" + i * .1);
-	});
-}
-
-function start(_ref2) {
-	var _ref2$coins = _ref2.coins;
-	var coins = _ref2$coins === undefined ? 8 : _ref2$coins;
-	var skew = _ref2.skew;
-	var _ref2$y = _ref2.y;
-	var y = _ref2$y === undefined ? 3 : _ref2$y;
-
+	centerScale(".all_2");
+	centerScale(".all_1");
 	var tl = (0, _commonJs.init)();
-	var list_a = [[".a1", -1, 0], [".a2", 1, 0], [".a3", 1, 0], [".a4", 1, 0], [".a5", -1, 0], [".a6", 1, -1]];
-	listIn(tl, list_a);
+
+	tl.add("frame1");
+	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame1");
+
+	tl.from(".ypy-1", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1");
+	tl.from(".ypy-2", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.2");
+	tl.from(".ypy-3", { duration: .5, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.4");
+
+	tl.add("frame2", "+=.2");
+	tl.from(".cover", { duration: .5, opacity: 0 }, "frame2");
+	tl.to(".all_1", { scale: 2, duration: .3 }, "frame2");
+	toNormal(tl, ".hero", "frame2");
+	toNormal(tl, ".ypy", "frame2");
+	// tl.to(".hero", {scale:2, duration:.3}, "frame2")
+
+	tl.from(".inset", { duration: .3, opacity: 0, y: 22 });
+
+	tl.from(".all_2", { scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame2");
+	tl.from(".t1", { duration: .3, opacity: 0 });
+	tl.to(".t1", { duration: .3, opacity: 0 }, "+=" + READ.t1);
+	tl.from(".t2", { duration: .3, opacity: 0 });
+
+	tl.add("end", "+=" + READ.t2);
+	tl.to(".frame1", { duration: .6, y: -_commonJs.bannerSize.h }, "end");
+	tl.set(".frame2", { opacity: 1 }, "end");
+	tl.from(".frame2", { duration: .6, y: _commonJs.bannerSize.h }, "end");
+
+	tl.from(".url", { opacity: 0, duration: .3 }, "+=.3");
+
+	tl.add((0, _commonJs.olg_ypy)(), "-=.3");
+
+	// tl.to(".all_2", {duration:.3, opacity:0}, "+=1")
 }
 
 exports.start = start;
-exports.rain = rain;
 exports.init = _commonJs.init;
 exports.bannerSize = _commonJs.bannerSize;
 exports.READ = READ;
