@@ -9,3 +9,10 @@ const ypy = [
 	{x:-172, y:-499, rotate:10}
 ]
 startBasic({ypy})
+
+
+
+document.getElementById("legalContent").innerHTML = `
+Must be 19 years of age or older and a resident of Ontario, located in the province to play online 
+casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
+`

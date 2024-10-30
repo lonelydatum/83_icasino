@@ -233,6 +233,8 @@ var _commonJsCommonJs = require('../../_common/js/common.js');
 var ypy = [{ x: -132, y: -443, rotate: -4 }, { x: -209, y: -463, rotate: 9 }, { x: -172, y: -499, rotate: 10 }];
 (0, _commonJsYpy_arcadeJs.startBasic)({ ypy: ypy });
 
+document.getElementById("legalContent").innerHTML = '\nMust be 19 years of age or older and a resident of Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n';
+
 },{"../../_common/js/common.js":1,"../../_common/js/ypy_arcade.js":4}]},{},[6])
 
 
