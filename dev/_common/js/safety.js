@@ -38,33 +38,27 @@ function rain({coins, skew, y=3}){
 	return tl
 }
 
+function listIn(tl, list){
+	tl.add("list_1")
+	const xy = 50
+	list.map((a, i)=>{
+		tl.from(a[0], {opacity:0, x:a[1]*xy, y:a[2]*xy}, `list_1+=${i*.1}`)
+	})
+}
+
 function start({coins=8, skew, y=3}){
 	const tl = init()
-	// return
-	rain({coins, skew, y})
-
+	const list_a = [
+		[".a1", -1, 0],
+		[".a2", 1, 0],
+		[".a3", 1, 0],
+		[".a4", 1, 0],
+		[".a5", -1, 0],
+		[".a6", 1, -1],
+	]
+	listIn(tl, list_a)
 	
-	tl.add("start", 3)
-	if(bannerSize.w<bannerSize.h){
-		tl.from(".bg", {y:bannerSize.h, duration:.6}, "start")	
-	}
 	
-
-	tl.from(".t1", {opacity:0, duration:.3})
-	tl.to(".t1", {opacity:0, duration:.3}, `+=${READ.t1}`)
-	tl.from([".t2", ".brand-logo"], {opacity:0, duration:.3})
-
-	tl.add("bye", `+=${READ.t2}`)
-	tl.to([".t2", ".ypy-text"], {opacity:0, duration:.3}, "bye")
-
-	tl.add("f2")
-	tl.to(".bg", {y:0, x:0, duration:.4}, `f2`)
-	tl.from([".devices"], {opacity:0, duration:.3})
-
-	tl.from([".url", ".buttons"], {opacity:0, duration:.3})
-
-	tl.add(olg_ypy(), "+=.3")
-
 
 }
 
