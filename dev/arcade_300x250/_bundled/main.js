@@ -129,7 +129,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _commonJs = require('./common.js');
 
-document.getElementById("legalContent").innerHTML = "\n©2024 IGT.<br/>\nMust be 19 years of age or older and a resident \nof Ontario, located in the province to play online\ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n<br/>\n*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark® Canadian Trust Study.";
+document.getElementById("legalContent").innerHTML = "\n©2024 Pragmatic Play. All rights reserved. </br>\n©2024 Games Global. All rights reserved. </br>\n©2024 Inspired. All rights reserved. </br>\nMust be 19 years of age or older and a resident of Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n";
 
 TweenLite.set("#banner", { backgroundColor: "#a46bff" });
 TweenLite.set(".ring", { transformOrigin: "57% 50%" });
@@ -178,9 +178,7 @@ function startBasic(_ref) {
 		tl.to(".hero", _extends({}, ypy[1]), "end");
 	}
 
-	if (youPlayYou) {
-		tl.to(".ypy", _extends({}, youPlayYou), "end");
-	}
+	tl.to(".ypy", { opacity: 0 }, "end");
 
 	tl.from(".url", { opacity: 0, duration: .3 }, "end");
 

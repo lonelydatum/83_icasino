@@ -1,12 +1,12 @@
 import {init, olg, olg_ypy, bannerSize} from './common.js'
 
 document.getElementById("legalContent").innerHTML = `
-©2024 IGT.<br/>
-Must be 19 years of age or older and a resident 
-of Ontario, located in the province to play online
+©2024 Pragmatic Play. All rights reserved. </br>
+©2024 Games Global. All rights reserved. </br>
+©2024 Inspired. All rights reserved. </br>
+Must be 19 years of age or older and a resident of Ontario, located in the province to play online 
 casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
-<br/>
-*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark® Canadian Trust Study.`
+`
 
 TweenLite.set("#banner", {backgroundColor:"#a46bff"})
 TweenLite.set(".ring", {transformOrigin:"57% 50%"})
@@ -64,9 +64,9 @@ function startBasic({ypy, youPlayYou}){
 		tl.to(".hero", {...ypy[1]}, "end")	
 	}
 	
-	if(youPlayYou){
-		tl.to(".ypy", {...youPlayYou}, "end")	
-	}
+	
+	tl.to(".ypy", {opacity:0}, "end")	
+	
 
 	
 	
