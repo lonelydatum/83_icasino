@@ -17,7 +17,7 @@ function toNormal(tl, el, time=""){
 	tl.to(el, {y:0, x:0, scale:.5, rotate:0, duration:.4}, time)
 }
 
-TweenLite.set("#banner", {backgroundColor:"#ff52ee"})
+TweenLite.set("#banner", {backgroundColor:"#beff00"})
 
 function start(bars){	
 	const tl = init()	
