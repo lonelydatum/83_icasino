@@ -1,0 +1,8 @@
+@import '../../../_common/styles/b970x250.scss';
+@import '../../../_common/styles/ypy.scss';
+
+
+.devices_1{	
+	@include pos-scale(-31, -1, .513);
+	// translate(6px, 5px) scale(0.465)
+}

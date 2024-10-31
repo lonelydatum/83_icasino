@@ -1,0 +1,19 @@
+@import '../../../_common/styles/b300x600.scss';
+@import '../../../_common/styles/ypy.scss';
+
+#banner{
+
+}
+
+
+
+
+
+.ypy-all{
+
+	
+	@include pos-scale(20, 414, 1.74);
+	img{
+		@include pos-scale(0, 0, .25);
+	}
+}

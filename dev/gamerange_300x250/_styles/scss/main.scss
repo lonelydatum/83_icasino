@@ -1,0 +1,38 @@
+@import '../../../_common/styles/b300x250.scss';
+@import '../../../_common/styles/ypy.scss';
+
+#banner{
+	
+	// background-color: #ffe600;
+}
+
+
+
+
+.devices_1{	
+	@include pos-scale(1, 17, .52);
+	// translate(6px, 5px) scale(0.465)
+}
+
+.devices_2{	
+	@include pos-scale(-8, 10, .57);
+	// translate(3px, 10px) scale(0.465)
+}
+
+.devices_3{	
+	@include pos-scale(-24, 41, .54);
+	// translate(2px, 9px) scale(.465)
+}
+
+.ypy-1{
+	@include pos-scale(-16, 13, .5);
+	
+}
+
+.ypy-2{
+	@include pos-scale(-203, 32, .5);
+}
+
+.ypy-3{
+	@include pos-scale(1, 13, .5);
+}
