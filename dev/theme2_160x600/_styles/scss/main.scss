@@ -1,0 +1,24 @@
+@import '../../../_common/styles/b160x600.scss';
+@import '../../../_common/styles/ypy.scss';
+
+
+#banner{
+	background-color: #ff52ee;
+}
+
+
+.hero-all{
+	@include pos-scale(-49, 0, .8);		
+}
+
+.ypy-you1{
+	@include pos-scale(-99, 10, .64);			
+}
+
+.ypy-play{
+	@include pos-scale(-102, 243, .615);			
+}
+
+.ypy-you2{
+	@include pos-scale(-54, 297, .64);
+}
