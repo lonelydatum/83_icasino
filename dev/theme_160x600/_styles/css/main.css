@@ -138,7 +138,7 @@ body {
 }
 
 #banner {
-  background-color: black;
+  background-color: white;
   width: 300px;
   height: 250px;
   overflow: hidden;
@@ -361,26 +361,6 @@ canvas, .text, .frame, .outline, img {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
-}
-
-#banner {
-  background-color: white;
-  background-color: #a6a6ae;
-}
-
-.bg {
-  width: 160px;
-  height: 600px;
-  -webkit-transform: translate(0px, 358px);
-  -ms-transform: translate(0px, 358px);
-  transform: translate(0px, 358px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-  position: absolute;
-  background-color: #ff52ef;
 }
 
 .hero {

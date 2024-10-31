@@ -134,6 +134,8 @@ var READ = {
 	t2: 2.6
 };
 
+TweenLite.set("#banner", { backgroundColor: "#ffe600" });
+
 function toNormal(tl, el, frame) {
 	tl.to(el, { scale: .5, x: 0, y: 0, duration: .4 }, frame);
 }
@@ -169,8 +171,10 @@ function start(_ref) {
 	centerScale(".all_1");
 	var tl = (0, _commonJs.init)();
 
+	// return
+
 	tl.add("frame1");
-	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame1");
+	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 50, y: 99 }, "frame1");
 
 	tl.from(".ypy-1", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1");
 	tl.from(".ypy-2", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.2");
@@ -178,14 +182,20 @@ function start(_ref) {
 
 	tl.add("frame2", "+=.2");
 	tl.from(".cover", { duration: .5, opacity: 0 }, "frame2");
-	tl.to(".all_1", { scale: 2, duration: .3 }, "frame2");
-	toNormal(tl, ".hero", "frame2");
+	tl.to(".all_1", { scale: 2, opacity: 0, duration: .3 }, "frame2");
+	if (_commonJs.bannerSize.h === 250) {
+
+		tl.to(".hero", { scale: .5, x: 0, y: -12, duration: .4 }, "frame2");
+	} else {
+		toNormal(tl, ".hero", "frame2");
+	}
+
 	toNormal(tl, ".ypy", "frame2");
 	// tl.to(".hero", {scale:2, duration:.3}, "frame2")
 
 	tl.from(".inset", { duration: .3, opacity: 0, y: 22 });
 
-	tl.from(".all_2", { scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame2");
+	tl.from(".all_2", { scale: 2, duration: .8, opacity: 0, rotate: -50, y: 99 }, "frame2");
 	tl.from(".t1", { duration: .3, opacity: 0 });
 	tl.to(".t1", { duration: .3, opacity: 0 }, "+=" + READ.t1);
 	tl.from(".t2", { duration: .3, opacity: 0 });
@@ -244,11 +254,11 @@ exports.ypyScroll = ypyScroll;
 },{}],6:[function(require,module,exports){
 'use strict';
 
-var _commonJsSafetyJs = require('../../_common/js/safety.js');
+var _commonJsYpyThemeJs = require('../../_common/js/ypy-theme.js');
 
-(0, _commonJsSafetyJs.start)({ coins: 8, skew: 40 });
+(0, _commonJsYpyThemeJs.start)({ coins: 8, skew: 40 });
 
-},{"../../_common/js/safety.js":4}]},{},[6])
+},{"../../_common/js/ypy-theme.js":4}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

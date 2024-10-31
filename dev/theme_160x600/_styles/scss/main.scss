@@ -2,8 +2,8 @@
 @import '../../../_common/styles/ypy.scss';
 
 #banner{
-	background-color: white;
-	background-color: #a6a6ae;
+	
+
 }
 
 
@@ -13,11 +13,10 @@
 }
 
 .bg{
-	width: 160px;
-	height: 600px;
-	@include pos(0, 358);
-	position: absolute;
-	background-color: #ff52ef;
+	// width: 160px;
+	// height: 600px;
+	// @include pos(0, 358);
+	// position: absolute;	
 }
 
 

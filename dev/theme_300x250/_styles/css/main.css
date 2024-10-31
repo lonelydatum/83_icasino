@@ -138,7 +138,7 @@ body {
 }
 
 #banner {
-  background-color: black;
+  background-color: white;
   width: 300px;
   height: 250px;
   overflow: hidden;
@@ -363,30 +363,10 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-#banner {
-  background-color: white;
-  background-color: #a56bff;
-}
-
-.bg {
-  width: 300px;
-  height: 250px;
-  -webkit-transform: translate(0px, 152px);
-  -ms-transform: translate(0px, 152px);
-  transform: translate(0px, 152px);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-  position: absolute;
-  background-color: #ff52ef;
-}
-
 .hero {
-  -webkit-transform: translate(-96px, 0px) scale(0.71, 0.71);
-  -ms-transform: translate(-96px, 0px) scale(0.71, 0.71);
-  transform: translate(-96px, 0px) scale(0.71, 0.71);
+  -webkit-transform: translate(-44px, -5px) scale(0.6, 0.6);
+  -ms-transform: translate(-44px, -5px) scale(0.6, 0.6);
+  transform: translate(-44px, -5px) scale(0.6, 0.6);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -394,24 +374,10 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.ypy-text {
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -webkit-filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
-  filter: drop-shadow(5px 5px 8px rgba(0, 0, 0, 0.8));
-}
-
-.coin {
-  -webkit-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-}
-
-.ypy-text-1 {
-  -webkit-transform: translate(16px, 58px) scale(0.5) rotate(-18deg);
-  -ms-transform: translate(16px, 58px) scale(0.5) rotate(-18deg);
-  transform: translate(16px, 58px) scale(0.5) rotate(-18deg);
+.ypy-1 {
+  -webkit-transform: translate(-28px, 32px) scale(0.5, 0.5);
+  -ms-transform: translate(-28px, 32px) scale(0.5, 0.5);
+  transform: translate(-28px, 32px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -419,10 +385,10 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.ypy-text-2 {
-  -webkit-transform: translate(53px, 82px) scale(0.5) rotate(14deg);
-  -ms-transform: translate(53px, 82px) scale(0.5) rotate(14deg);
-  transform: translate(53px, 82px) scale(0.5) rotate(14deg);
+.ypy-2 {
+  -webkit-transform: translate(-13px, 24px) scale(0.5, 0.5);
+  -ms-transform: translate(-13px, 24px) scale(0.5, 0.5);
+  transform: translate(-13px, 24px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
@@ -430,98 +396,10 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-.ypy-text-3 {
-  -webkit-transform: translate(222px, 109px) scale(0.5) rotate(-28deg);
-  -ms-transform: translate(222px, 109px) scale(0.5) rotate(-28deg);
-  transform: translate(222px, 109px) scale(0.5) rotate(-28deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-1 {
-  -webkit-transform: translate(129px, -59px) scale(0.5, 0.5);
-  -ms-transform: translate(129px, -59px) scale(0.5, 0.5);
-  transform: translate(129px, -59px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-2 {
-  -webkit-transform: translate(51px, -51px) scale(0.5, 0.5);
-  -ms-transform: translate(51px, -51px) scale(0.5, 0.5);
-  transform: translate(51px, -51px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-3 {
-  -webkit-transform: translate(-19px, -46px) scale(0.5, 0.5);
-  -ms-transform: translate(-19px, -46px) scale(0.5, 0.5);
-  transform: translate(-19px, -46px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-4 {
-  -webkit-transform: translate(-39px, 62px) scale(0.5, 0.5);
-  -ms-transform: translate(-39px, 62px) scale(0.5, 0.5);
-  transform: translate(-39px, 62px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-5 {
-  -webkit-transform: translate(11px, 103px) scale(0.5, 0.5);
-  -ms-transform: translate(11px, 103px) scale(0.5, 0.5);
-  transform: translate(11px, 103px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-6 {
-  -webkit-transform: translate(-131px, 90px) scale(0.5, 0.5);
-  -ms-transform: translate(-131px, 90px) scale(0.5, 0.5);
-  transform: translate(-131px, 90px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-7 {
-  -webkit-transform: translate(100px, 170px) scale(0.5, 0.5);
-  -ms-transform: translate(100px, 170px) scale(0.5, 0.5);
-  transform: translate(100px, 170px) scale(0.5, 0.5);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  position: absolute;
-}
-
-.coin-8 {
-  -webkit-transform: translate(140px, 142px) scale(0.5, 0.5);
-  -ms-transform: translate(140px, 142px) scale(0.5, 0.5);
-  transform: translate(140px, 142px) scale(0.5, 0.5);
+.ypy-3 {
+  -webkit-transform: translate(-8px, 14px) scale(0.5, 0.5);
+  -ms-transform: translate(-8px, 14px) scale(0.5, 0.5);
+  transform: translate(-8px, 14px) scale(0.5, 0.5);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
