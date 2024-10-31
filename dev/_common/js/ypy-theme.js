@@ -46,7 +46,7 @@ function start({coins=8, skew, y=3}){
 	centerScale(".all_2")
 	centerScale(".all_1")
 	const tl = init()
-	
+	// return
 
 	const isNormal = bannerSize.w/bannerSize.h < 2
 	
@@ -69,6 +69,8 @@ function start({coins=8, skew, y=3}){
 	
 	if(universalBanner.size==="300x250"){		
 		tl.to(".hero", {scale:.5, x:0, y:-12, duration:.4}, "frame2")
+	}else if(universalBanner.size==="1600x600"){		
+		tl.to(".hero", {scale:.5, x:0, y:-20, duration:.4}, "frame2")
 	}else{
 		toNormal(tl, ".hero", "frame2")	
 	}

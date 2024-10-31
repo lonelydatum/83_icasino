@@ -364,9 +364,9 @@ canvas, .text, .frame, .outline, img {
 }
 
 .hero {
-  -webkit-transform: translate(-51px, 16px) scale(0.793, 0.793);
-  -ms-transform: translate(-51px, 16px) scale(0.793, 0.793);
-  transform: translate(-51px, 16px) scale(0.793, 0.793);
+  -webkit-transform: translate(-51px, -1px) scale(0.793, 0.793);
+  -ms-transform: translate(-51px, -1px) scale(0.793, 0.793);
+  transform: translate(-51px, -1px) scale(0.793, 0.793);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;

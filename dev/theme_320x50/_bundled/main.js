@@ -170,6 +170,7 @@ function start(_ref) {
 	centerScale(".all_2");
 	centerScale(".all_1");
 	var tl = (0, _commonJs.init)();
+	// return
 
 	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 
@@ -188,6 +189,8 @@ function start(_ref) {
 
 	if (universalBanner.size === "300x250") {
 		tl.to(".hero", { scale: .5, x: 0, y: -12, duration: .4 }, "frame2");
+	} else if (universalBanner.size === "1600x600") {
+		tl.to(".hero", { scale: .5, x: 0, y: -20, duration: .4 }, "frame2");
 	} else {
 		toNormal(tl, ".hero", "frame2");
 	}

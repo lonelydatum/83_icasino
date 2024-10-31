@@ -21,7 +21,7 @@
 
 
 .hero{	
-	@include pos-scale(-51, 16, .793);
+	@include pos-scale(-51, -1, .793);
 	// opacity: .6;
 }
 
