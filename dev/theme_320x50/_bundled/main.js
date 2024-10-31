@@ -127,12 +127,14 @@ Object.defineProperty(exports, "__esModule", {
 
 var _commonJs = require('./common.js');
 
-document.getElementById("legalContent").innerHTML = "© 2023 IGT.\n<br/>\n© 2023 Evolution. All Rights Reserved.<br/>\n<br/>\nMust be 19 years of age or older and a resident of Ontario, located in the province to play\nonline casino games. Games and screens may not appear as shown. Odds vary by game. Terms\nand conditions apply.<br/>\n<br/>\n*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark®\nCanadian Trust Study.";
+document.getElementById("legalContent").innerHTML = "\n©2024 Games Global. All rights reserved. </br>\n©2024 Pragmatic Play. All rights reserved.</br>\nMust be 19 years of age or older and a resident\nof Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n";
 
 var READ = {
 	t1: 2.3,
 	t2: 2.6
 };
+
+TweenLite.set("#banner", { backgroundColor: "#ffe600" });
 
 function toNormal(tl, el, frame) {
 	tl.to(el, { scale: .5, x: 0, y: 0, duration: .4 }, frame);
@@ -169,8 +171,10 @@ function start(_ref) {
 	centerScale(".all_1");
 	var tl = (0, _commonJs.init)();
 
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
+
 	tl.add("frame1");
-	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame1");
+	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 30, y: 99 }, "frame1");
 
 	tl.from(".ypy-1", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1");
 	tl.from(".ypy-2", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.2");
@@ -178,14 +182,22 @@ function start(_ref) {
 
 	tl.add("frame2", "+=.2");
 	tl.from(".cover", { duration: .5, opacity: 0 }, "frame2");
-	tl.to(".all_1", { scale: 2, duration: .3 }, "frame2");
-	toNormal(tl, ".hero", "frame2");
+	if (isNormal) {
+		tl.to(".all_1", { scale: 2, opacity: 0, duration: .3 }, "frame2");
+	}
+
+	if (universalBanner.size === "300x250") {
+		tl.to(".hero", { scale: .5, x: 0, y: -12, duration: .4 }, "frame2");
+	} else {
+		toNormal(tl, ".hero", "frame2");
+	}
+
 	toNormal(tl, ".ypy", "frame2");
 	// tl.to(".hero", {scale:2, duration:.3}, "frame2")
 
 	tl.from(".inset", { duration: .3, opacity: 0, y: 22 });
 
-	tl.from(".all_2", { scale: 2, duration: .8, opacity: 0, rotate: 111, y: 99 }, "frame2");
+	tl.from(".all_2", { scale: 2, duration: .8, opacity: 0, rotate: -50, y: 99 }, "frame2");
 	tl.from(".t1", { duration: .3, opacity: 0 });
 	tl.to(".t1", { duration: .3, opacity: 0 }, "+=" + READ.t1);
 	tl.from(".t2", { duration: .3, opacity: 0 });
@@ -244,7 +256,7 @@ exports.ypyScroll = ypyScroll;
 },{}],6:[function(require,module,exports){
 "use strict";
 
-var _commonJsSafetyJs = require('../../_common/js/safety.js');
+var _commonJsYpyThemeJs = require('../../_common/js/ypy-theme.js');
 
 start({ coins: 6, skew: 40, y: 7 });
 
@@ -256,31 +268,30 @@ function start(_ref) {
 	var skew = _ref.skew;
 	var y = _ref.y;
 
-	var tl = (0, _commonJsSafetyJs.init)();
+	var tl = (0, _commonJsYpyThemeJs.init)();
 	// return
-	(0, _commonJsSafetyJs.rain)({ coins: coins, skew: skew, y: y });
+	// rain({coins, skew, y})
 
-	tl.add("start", 3);
+	tl.add("frame1");
 
-	tl.to(".ypy-text", { opacity: 0, duration: .3 }, "start");
+	tl.from(".ypy-1", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1");
+	tl.from(".ypy-2", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.2");
+	tl.from(".ypy-3", { duration: .5, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.4");
+
+	tl.to(".ypy-text", { opacity: 0, duration: .3 }, "+=.5");
 
 	tl.from(".t1", { opacity: 0, duration: .3 });
-	tl.to(".t1", { opacity: 0, duration: .3 }, "+=" + _commonJsSafetyJs.READ.t1);
-	tl.from([".t2", ".brand-logo"], { opacity: 0, duration: .3 });
+	tl.to(".t1", { opacity: 0, duration: .3 }, "+=" + _commonJsYpyThemeJs.READ.t1);
 
-	tl.add("bye", "+=" + _commonJsSafetyJs.READ.t2);
-	tl.to([".t2", ".ypy-text"], { opacity: 0, duration: .3 }, "bye");
-
-	tl.add("f2");
-	tl.to(".bg", { y: 0, x: 0, duration: .4 }, "f2");
-	tl.from([".devices"], { opacity: 0, duration: .3 });
+	tl.from(".t2", { opacity: 0, duration: .3 });
+	tl.to(".t2", { opacity: 0, duration: .3 }, "+=" + _commonJsYpyThemeJs.READ.t2);
 
 	tl.from([".url", ".buttons"], { opacity: 0, duration: .3 });
 
-	tl.add((0, _commonJsSafetyJs.olg_ypy)(), "+=.3");
+	tl.add((0, _commonJsYpyThemeJs.olg_ypy)(), "+=.3");
 }
 
-},{"../../_common/js/safety.js":4}]},{},[6])
+},{"../../_common/js/ypy-theme.js":4}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

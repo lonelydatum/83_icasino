@@ -2,79 +2,29 @@
 @import '../../../_common/styles/ypy.scss';
 
 #banner{
-	background-color: white;
-	background-color: #a56bff;
+
 }
 
 
 
 
-.devices{
-	// @include pos-scale(12, -7, .46);
+.hero{	
+	@include pos-scale(-102, -10, .8);
+	
 }
 
-.bg{
-	width: 300px;
-	height: 600px;
-	@include pos(0, 358);
-	position: absolute;
-	background-color: #ff52ef;
+.ypy-1{
+	@include pos-scale(-25, 8, .52);
+	
+	
 }
 
-
-.hero{
-	// @include pos-scale(-96, 0, .71);
+.ypy-2{
+	@include pos-scale(5, 28, .52);
+	
 }
 
-.ypy-text{
-	transform-origin: 50% 50%;
-
-	filter: drop-shadow(5px 5px 8px rgba(0,0,0,.8));
+.ypy-3{
+	@include pos-scale(3, 24, .52);
+	
 }
-.coin{
-	transform-origin: 50% 50%;
-}
-
-
-.ypy-text-1{
-	@include pos-scale-rotate(-11, 31, .5, -27);
-}
-
-.ypy-text-2{
-	@include pos-scale-rotate(19, 91, .5, 14);
-}
-
-.ypy-text-3{
-	@include pos-scale-rotate(209, 175, .5, -28);
-}
-
-.coin-1{
-	@include pos-scale(138, -27, .5);
-}
-.coin-2{
-	@include pos-scale(-12, -79, .5);
-}
-.coin-3{
-	@include pos-scale(-70, -10, .5);
-}
-.coin-4{
-	@include pos-scale(-60, 310, .5);
-}
-.coin-5{
-	@include pos-scale(2, 196, .5);
-}
-.coin-6{
-	@include pos-scale(-220, 381, .5);
-}
-.coin-7{
-	@include pos-scale(179, 434, .5);
-}
-.coin-8{
-	@include pos-scale(184, 337, .5);
-}
-
-.coin-9{
-	@include pos-scale(15, 134, .5);
-}
-
-

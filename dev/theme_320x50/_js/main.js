@@ -1,4 +1,4 @@
-import {rain, init, bannerSize, READ, olg_ypy} from '../../_common/js/safety.js'
+import {rain, init, bannerSize, READ, olg_ypy} from '../../_common/js/ypy-theme.js'
 
 start({coins:6, skew:40, y:7})
 
@@ -12,25 +12,28 @@ document.getElementById("legalContent").innerHTML  = `Must be 19 years of age or
 function start({coins=8, skew, y}){
 	const tl = init()
 	// return
-	rain({coins, skew, y})
+	// rain({coins, skew, y})
 
 	
-	tl.add("start", 3)
+	tl.add("frame1")
+
+	tl.from(".ypy-1", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1")
+	tl.from(".ypy-2", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1+=.2")
+	tl.from(".ypy-3", {duration:.5, ease:"back.out", opacity:0, y:-100}, "frame1+=.4")
 	
 
-	tl.to(".ypy-text", {opacity:0, duration:.3}, "start")
+	tl.to(".ypy-text", {opacity:0, duration:.3}, "+=.5")
 	
 
 	tl.from(".t1", {opacity:0, duration:.3})
 	tl.to(".t1", {opacity:0, duration:.3}, `+=${READ.t1}`)
-	tl.from([".t2", ".brand-logo"], {opacity:0, duration:.3})
 
-	tl.add("bye", `+=${READ.t2}`)
-	tl.to([".t2", ".ypy-text"], {opacity:0, duration:.3}, "bye")
+	tl.from(".t2", {opacity:0, duration:.3})
+	tl.to(".t2", {opacity:0, duration:.3}, `+=${READ.t2}`)
+	
+	
 
-	tl.add("f2")
-	tl.to(".bg", {y:0, x:0, duration:.4}, `f2`)
-	tl.from([".devices"], {opacity:0, duration:.3})
+	
 
 	tl.from([".url", ".buttons"], {opacity:0, duration:.3})
 

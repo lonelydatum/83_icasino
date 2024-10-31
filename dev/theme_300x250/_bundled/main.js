@@ -127,7 +127,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _commonJs = require('./common.js');
 
-document.getElementById("legalContent").innerHTML = "© 2023 IGT.\n<br/>\n© 2023 Evolution. All Rights Reserved.<br/>\n<br/>\nMust be 19 years of age or older and a resident of Ontario, located in the province to play\nonline casino games. Games and screens may not appear as shown. Odds vary by game. Terms\nand conditions apply.<br/>\n<br/>\n*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark®\nCanadian Trust Study.";
+document.getElementById("legalContent").innerHTML = "\n©2024 Games Global. All rights reserved. </br>\n©2024 Pragmatic Play. All rights reserved.</br>\nMust be 19 years of age or older and a resident\nof Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n";
 
 var READ = {
 	t1: 2.3,
@@ -171,10 +171,10 @@ function start(_ref) {
 	centerScale(".all_1");
 	var tl = (0, _commonJs.init)();
 
-	// return
+	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 
 	tl.add("frame1");
-	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 50, y: 99 }, "frame1");
+	tl.from(".all_1", { ease: "power3.out", scale: 2, duration: .8, opacity: 0, rotate: 30, y: 99 }, "frame1");
 
 	tl.from(".ypy-1", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1");
 	tl.from(".ypy-2", { duration: .3, ease: "back.out", opacity: 0, y: -100 }, "frame1+=.2");
@@ -182,9 +182,11 @@ function start(_ref) {
 
 	tl.add("frame2", "+=.2");
 	tl.from(".cover", { duration: .5, opacity: 0 }, "frame2");
-	tl.to(".all_1", { scale: 2, opacity: 0, duration: .3 }, "frame2");
-	if (_commonJs.bannerSize.h === 250) {
+	if (isNormal) {
+		tl.to(".all_1", { scale: 2, opacity: 0, duration: .3 }, "frame2");
+	}
 
+	if (universalBanner.size === "300x250") {
 		tl.to(".hero", { scale: .5, x: 0, y: -12, duration: .4 }, "frame2");
 	} else {
 		toNormal(tl, ".hero", "frame2");
