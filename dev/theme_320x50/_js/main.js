@@ -11,11 +11,15 @@ document.getElementById("legalContent").innerHTML  = `Must be 19 years of age or
 
 function start({coins=8, skew, y}){
 	const tl = init()
+	TweenLite.set(".all_1", {transformOrigin:"50% 50%", x:-bannerSize.w/2, y:-bannerSize.h/2})
 	// return
 	// rain({coins, skew, y})
 
 	
+
 	tl.add("frame1")
+
+	tl.from(".all_1", {ease:"power3.out", scale:2, duration:.8, opacity:0, rotate:30, y:99}, "frame1")
 
 	tl.from(".ypy-1", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1")
 	tl.from(".ypy-2", {duration:.3, ease:"back.out", opacity:0, y:-100}, "frame1+=.2")
