@@ -5,9 +5,8 @@ import {init, olg, bannerSize, olg_ypy} from './common.js'
 document.getElementById("legalContent").innerHTML = `
 ©2024 Evolution. </br>
 All rights reserved.</br>
-Must be 19 years of age or older and a resident 
-of Ontario, located in the province to play online
-casino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.
+Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. 
+Games may not appear as shown. Odds vary by game. Terms and conditions apply.
 `
 
 const READ = {
