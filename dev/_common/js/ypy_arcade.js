@@ -9,7 +9,7 @@ casino games. Games may not appear as shown. Odds vary by game. Terms and condit
 `
 
 TweenLite.set("#banner", {backgroundColor:"#a46bff"})
-TweenLite.set(".ring", {transformOrigin:"57% 50%"})
+TweenLite.set(".ring", {transformOrigin:"531px 430px"})
 
 
 
@@ -26,7 +26,7 @@ function startBasic({ypy, youPlayYou}){
 	
 	const tl = init()
 	// return
-	const rotate = 222
+	const rotate = 200
 	tl.add("arcs-in")
 	TweenLite.set(".ring", {opacity:1})
 	const ring = {opacity:0, ease: "power2.out", duration:.7}
