@@ -1,8 +1,16 @@
-import {start} from '../../_common/js/ypy-squid.js'
+import {start} from '../../_common/js/ypy-theme2.js'
 
 
-// tl.to(".hero-all", {ease:"power1.out", x:0, scale:.5, duration:.3}, "scale")
-const heroScale = {ease:"power1.out", x:0, scale:.5, duration:.3}
-start(heroScale)
+const bars = [
+	[".b1", 1],
+	[".b2", -1],
+	[".b3", 1],
+	[".b4", -1],	
+	[".b5", 1],	
+]
+
+
+
+start(bars)
 
 

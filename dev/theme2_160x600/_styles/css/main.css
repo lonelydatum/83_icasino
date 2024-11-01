@@ -363,10 +363,6 @@ canvas, .text, .frame, .outline, img {
   position: absolute;
 }
 
-#banner {
-  background-color: #ff52ee;
-}
-
 .hero-all {
   -webkit-transform: translate(-49px, 0px) scale(0.8, 0.8);
   -ms-transform: translate(-49px, 0px) scale(0.8, 0.8);

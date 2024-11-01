@@ -127,7 +127,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _commonJs = require('./common.js');
 
-document.getElementById("legalContent").innerHTML = "\n©2024 AGS. All rights reserved. </br>\n©2024 Light & Wonder. All rights reserved.</br>\nMust be 19 years of age or older and a resident \nof Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply. \n*Voted most trusted Online Casino by Ontario shoppers based on the 2023 Brandspark® \nCanadian Trust Study.\n";
+document.getElementById("legalContent").innerHTML = "\n©2024 IGT.</br>\n©2024 Games Global. </br>\nAll rights reserved.\nMust be 19 years of age or older and a resident \nof Ontario, located in the province to play online \ncasino games. Games may not appear as shown. Odds vary by game. Terms and conditions apply.\n";
 
 var READ = {
 	t1: 1.8,
@@ -140,29 +140,33 @@ function toNormal(tl, el) {
 	tl.to(el, { y: 0, x: 0, scale: .5, rotate: 0, duration: .4 }, time);
 }
 
-TweenLite.set("#banner", { backgroundColor: "#ff52ee" });
+TweenLite.set("#banner", { backgroundColor: "#beff00" });
 
-function start(heroScale) {
+function start(bars) {
 	var tl = (0, _commonJs.init)();
-	// return
 
 	var isNormal = _commonJs.bannerSize.w / _commonJs.bannerSize.h < 2;
 
 	tl.add("bars");
 
-	tl.from(".frame1 .top.b1", { y: -_commonJs.bannerSize.h, duration: .5 }, "bars+=.3");
-	tl.from(".frame1 .bottom.b2", { y: _commonJs.bannerSize.h, duration: .5 }, "bars+=.3");
-	tl.from(".frame1 .bottom.b3", { y: _commonJs.bannerSize.h, duration: .5 }, "bars+=.6");
-	tl.from(".frame1 .top.b4", { y: -_commonJs.bannerSize.h, duration: .5 }, "bars+=.9");
-	tl.from(".frame1 .bottom.b5", { y: _commonJs.bannerSize.h, duration: .5 }, "bars+=.2");
+	bars.map(function (a, i) {
+		tl.from(a[0], { y: a[1] * _commonJs.bannerSize.h, duration: .5 }, "bars+=" + i * .2);
+	});
 
-	tl.from(".ypy-you1", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=.5");
-	tl.from(".ypy-play", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=.8");
-	tl.from(".ypy-you2", { y: -_commonJs.bannerSize.h, duration: .4 }, "bars+=1");
+	// return
+
+	tl.from(".ypy-you1", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=.5");
+	tl.from(".ypy-play", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=.8");
+	tl.from(".ypy-you2", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=1");
 
 	tl.add("scale", "+=.3");
 
-	tl.to(".hero-all", { x: 0, y: 0, scale: .5, duration: .4 }, "scale");
+	if (universalBanner.size === "160x600") {
+		tl.to(".hero-all", { x: -37, y: -26, scale: .5, duration: .4 }, "scale");
+	} else {
+		tl.to(".hero-all", { x: 0, y: 0, scale: .5, duration: .4 }, "scale");
+	}
+
 	if (isNormal) {
 		tl.to(".frame1 .bar", { opacity: 0, duration: .4 }, "scale");
 	}
@@ -177,6 +181,8 @@ function start(heroScale) {
 	tl.to(".t1", { ease: "power1.out", opacity: 0, duration: .3 }, "+=" + READ.t1);
 
 	tl.from(".t2", { ease: "power1.out", opacity: 0, y: 30, duration: .3 });
+
+	// return
 
 	tl.add("end", "+=" + READ.t2);
 	tl.set(".frame2", { opacity: 1 }, "end");
@@ -236,12 +242,13 @@ exports.ypyScroll = ypyScroll;
 
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
-var _commonJsYpySquidJs = require('../../_common/js/ypy-squid.js');
+var _commonJsYpyTheme2Js = require('../../_common/js/ypy-theme2.js');
 
 document.getElementById("legalContent").innerHTML = 'Must be 19 years of age or older and a resident of Ontario, located in the province to play online casino games. Games and screens may not appear as shown. Odds vary by game.\n\nTerms and conditions apply.';
 
-var heroScale = { ease: "power1.out", duration: .3 };
-start(heroScale);
+var bars = [[".b1", -1], [".b2", -1], [".b3", 1], [".b4", -1], [".b5", -1]];
+
+start(bars);
 
 function start(heroScale) {
 	var tl = (0, _commonJsCommonJs.init)();
@@ -249,16 +256,13 @@ function start(heroScale) {
 	// return
 	tl.add("bars");
 
-	tl.from(".frame1 .top.b2", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.3");
-	tl.from(".frame1 .top.b4", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.6");
-	tl.from(".frame1 .top.b5", { y: -_commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.9");
+	bars.map(function (a, i) {
+		tl.from(a[0], { y: a[1] * _commonJsCommonJs.bannerSize.h, duration: .2 }, 'bars+=' + i * .2);
+	});
 
-	tl.from(".frame1 .bottom.b1", { y: _commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=1");
-	tl.from(".frame1 .bottom.b3", { y: _commonJsCommonJs.bannerSize.h, duration: .5 }, "bars+=.5");
-
-	tl.from(".ypy-you1", { y: -_commonJsCommonJs.bannerSize.h, duration: .4 }, "bars+=.5");
-	tl.from(".ypy-play", { y: -_commonJsCommonJs.bannerSize.h, duration: .4 }, "bars+=.8");
-	tl.from(".ypy-you2", { y: -_commonJsCommonJs.bannerSize.h, duration: .4 }, "bars+=1");
+	tl.from(".ypy-you1", { y: -_commonJsCommonJs.bannerSize.h, duration: .3 }, "bars+=.5");
+	tl.from(".ypy-play", { y: -_commonJsCommonJs.bannerSize.h, duration: .3 }, "bars+=.8");
+	tl.from(".ypy-you2", { y: -_commonJsCommonJs.bannerSize.h, duration: .3 }, "bars+=1");
 
 	tl.add("scale", "+=.3");
 
@@ -267,20 +271,20 @@ function start(heroScale) {
 	tl.to([".ypy-you1", ".ypy-you2", ".ypy-play"], { opacity: 0, duration: .3 }, "+=.5");
 	tl.from([".t1", ".logo"], { ease: "power1.out", opacity: 0, duration: .3 });
 
-	tl.to(".t1", { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpySquidJs.READ.t1);
+	tl.to(".t1", { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpyTheme2Js.READ.t1);
 
 	tl.from(".t2", { ease: "power1.out", opacity: 0, duration: .3 });
-	tl.to([".t2", ".logo"], { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpySquidJs.READ.t2);
+	tl.to([".t2", ".logo"], { ease: "power1.out", opacity: 0, duration: .3 }, '+=' + _commonJsYpyTheme2Js.READ.t2);
 
 	tl.add("scroller");
 	tl.from(".url", { opacity: 0, duration: .3 }, "scroller");
 
-	tl.add((0, _commonJsYpySquidJs.olg_ypy)(), "+=.3");
+	tl.add((0, _commonJsYpyTheme2Js.olg_ypy)(), "+=.3");
 
 	return tl;
 }
 
-},{"../../_common/js/common.js":1,"../../_common/js/ypy-squid.js":4}]},{},[6])
+},{"../../_common/js/common.js":1,"../../_common/js/ypy-theme2.js":4}]},{},[6])
 
 
 //# sourceMappingURL=main.js.map

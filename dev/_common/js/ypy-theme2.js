@@ -31,7 +31,7 @@ function start(bars){
 		tl.from(a[0], {y:a[1]*bannerSize.h, duration:.5}, `bars+=${i*.2}`)	
 	})
 	
-	
+	// return
 	
 
 	tl.from(".ypy-you1", {y:-bannerSize.h, opacity:0, duration:.4}, "bars+=.5")

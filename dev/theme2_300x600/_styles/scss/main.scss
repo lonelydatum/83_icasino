@@ -2,29 +2,37 @@
 @import '../../../_common/styles/ypy.scss';
 
 
-#banner{
-	background-color: #ff52ee;
-}
 
 .hero-all{
-	@include pos-scale(-101, 0, .8);	
-	// opacity: .6;
+	@include pos-scale(-43, -10, .72);	
+
 }
 
 
 
 
 .ypy-you1{
-	@include pos-scale(-16, -94, .7);		
+	@include pos-scale(-78, -8, .5);
 	
 }
 
 .ypy-play{
-	@include pos-scale(-93, 15, .7);	
+	@include pos-scale(-16, 0, .5);	
 	
 }
 
 .ypy-you2{
-	@include pos-scale(-101, 38, .7);	
+	@include pos-scale(0, 81, .5);	
 	
+}
+
+
+
+.ypy-all{
+
+	
+	@include pos-scale(20, 381, 1.74);
+	img{
+		@include pos-scale(0, 0, .25);
+	}
 }

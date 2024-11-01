@@ -153,6 +153,8 @@ function start(bars) {
 		tl.from(a[0], { y: a[1] * _commonJs.bannerSize.h, duration: .5 }, "bars+=" + i * .2);
 	});
 
+	// return
+
 	tl.from(".ypy-you1", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=.5");
 	tl.from(".ypy-play", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=.8");
 	tl.from(".ypy-you2", { y: -_commonJs.bannerSize.h, opacity: 0, duration: .4 }, "bars+=1");
@@ -240,7 +242,7 @@ exports.ypyScroll = ypyScroll;
 
 var _commonJsYpyTheme2Js = require('../../_common/js/ypy-theme2.js');
 
-var bars = [[".b1", 1], [".b2", -1], [".b3", 1], [".b4", -1]];
+var bars = [[".b1", -1], [".b2", 1], [".b3", -1], [".b4", -1], [".b5", -1]];
 
 (0, _commonJsYpyTheme2Js.start)(bars);
 
